@@ -10,17 +10,18 @@
  */
 
 get_header();
+$page_ID = get_option('page_on_front');
 ?>
 
 <main class="front-page">
     <section id="cover" class="front-page__section">
         <?php 
-            $image_id = get_field('portada');
+            $image_id = get_field('portada', $page_ID);
             if ( $image_id ) : 
                 $image_data=wp_get_attachment_image_src($image_id, 'full', false);?>
                 <img class="front-page__cover-image" src="<?php echo $image_data[0];?>" alt="Imatge de la portada">
             <?php else : ?>
-                <img src="<?php bloginfo('template_url');?>/assets/images/bannercodec.png" alt="Portada de la pàgina de bikelogic">
+                <img class="front-page__cover-image" src="<?php bloginfo('template_url');?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
             <?php endif ?>
     </section>
     <section id="services" class="front-page__section">
@@ -45,6 +46,29 @@ get_header();
                 </div>
         
             <?php endif; ?>
+
+    </section>
+    <section id="project" class="front-page__section parallax-window">
+        <div class="front-page__parallax-background">
+            <?php 
+                $image_id = get_field('parallax', $page_ID);
+                if ( $image_id ) : 
+                    $image_data=wp_get_attachment_image_src($image_id, 'full', false);?>
+                    <img class="front-page__project-image" src="<?php echo $image_data[0];?>" alt="Imatge del projecte">
+                <?php else : ?>
+                    <img class="front-page__project-image" src="<?php bloginfo('template_url');?>/assets/images/parallax-image.jpg" alt="Imatge del projecte per defecte">
+                <?php endif ?>
+        </div>
+        <div class="front-page__parallax-overlay">
+            <?php if (get_field('projecte', $page_ID)) : ?>
+                    <h2><?php the_field('projecte', $page_ID); ?></h2>
+            <?php else : ?>
+                    <h2>Això no està funcionant</h2>
+            <?php endif; ?> 
+        </div>
+    </section>
+    <section id="team" class="front-page__section">
+        <h1>Equip</h1>
 
     </section>
 </main>
