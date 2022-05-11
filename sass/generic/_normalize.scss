@@ -22,6 +22,8 @@ html {
 
 body {
 	margin: 0;
+	width: calc(var(--vw, 1vw) * 100);
+	overflow-x: hidden;
 }
 
 /**

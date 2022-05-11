@@ -97,6 +97,7 @@ function bikelogic_setup() {
 			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
+			'unlink-homepage-logo' => false
 		)
 	);
 }

@@ -8,9 +8,13 @@
 	position: relative;
 }
 
+.front-page__section#cover {
+	padding: 0 10vw;
+}
+
 .front-page__cover-image {
 	max-width: 100vw;
-	width: calc(100vw - 15px);
+	width: calc(var(--vw, 1vw) * 100);
 	margin: 0 calc(10vw * -1);
 }
 

@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<script src="<?php echo get_template_directory_uri() . '/assets/js/utils/viewport.js';?>"></script>
 
 	<?php wp_head(); ?>
 </head>
@@ -28,14 +29,16 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
+			if ( is_front_page() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<!-- <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> -->
+				<?php the_custom_logo();?>
+
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<!-- <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p> -->
+				<?php the_custom_logo();?>
 				<?php
 			endif;
 			$bikelogic_description = get_bloginfo( 'description', 'display' );

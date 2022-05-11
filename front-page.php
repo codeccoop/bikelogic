@@ -72,3 +72,4 @@ $page_ID = get_option('page_on_front');
 
     </section>
 </main>
+<?php get_footer(); ?>

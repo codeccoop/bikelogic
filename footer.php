@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<?php echo do_shortcode('[contact-form-7 id="6" title="Contact form 1"]');?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bikelogic' ) ); ?>">
 				<?php
