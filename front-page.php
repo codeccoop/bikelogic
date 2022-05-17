@@ -24,7 +24,7 @@ $page_ID = get_option('page_on_front');
                 <img class="front-page__cover-image" src="<?php bloginfo('template_url');?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
             <?php endif ?>
     </section>
-    <section id="services" class="front-page__section">
+    <section id="services" class="front-page__section" style="background-image: url('<?php bloginfo('template_url');?>/assets/images/iso_bl_color_pos.png');">
         <?php
             $args = array(
                'post_type' => 'servei',
@@ -38,10 +38,20 @@ $page_ID = get_option('page_on_front');
                             $query->the_post();
                             $post_id=get_the_ID();
                             $post_url=get_post_permalink($post_id);?>
-                            <a href="<?php echo $post_url ?>"><div class="front-page__service">
-                                <h1><?php echo get_the_title();?></h1>
-                                <p><?php echo get_the_excerpt();?></p>
-                            </div></a>
+                            <div class="front-page__service">
+                                <a href="<?php echo $post_url ?>"><div class="front-page__service-content">
+                                    <div class="service-info left">
+                                        <img class="service-content__thumbnail" src="<?php
+                                        get_the_post_thumbnail_url($post_id)?>">
+                                        <h3><?php echo get_the_title();?></h3>
+                                    </div>
+                                    <div class="service-info right">
+                                        <p><?php echo get_the_excerpt();?></p>
+                                        <button>Més informació</button>
+                                    </div> 
+                                    
+                                </div></a>
+                            </div>
                         <?php endwhile; ?>
                 </div>
         
