@@ -19,6 +19,9 @@
 	<script src="<?php echo get_template_directory_uri() . '/assets/js/utils/viewport.js';?>"></script>
 
 	<?php wp_head(); ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,36 +30,46 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'bikelogic' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() ) :
-				?>
-				<!-- <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> -->
-				<?php the_custom_logo();?>
-
-				<?php
-			else :
-				?>
-				<!-- <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p> -->
-				<?php the_custom_logo();?>
-				<?php
-			endif;
-			$bikelogic_description = get_bloginfo( 'description', 'display' );
-			if ( $bikelogic_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $bikelogic_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+		<div class="site-branding"><?php
+        if (has_custom_logo()) :
+            the_custom_logo();
+        else : ?>
+            <a href="http://bikelogic.orzopad.net/" class="custom-logo-link" rel="home" aria-current="page">
+                <img src="<?= bloginfo('template_url'); ?>/assets/images/bikelogic-brand.png" class="custom-logo" alt="Bikelogic">
+            </a>
+        <?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bikelogic' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+            <div class="main-navigation__column left">
+			    <?php
+			    wp_nav_menu(
+				    array(
+					    'theme_location' => 'menu-1',
+					    'menu_id'        => 'primary-menu',
+				    )
+			    );
+			    ?>
+            </div>
+            <div class="main-navigation__column right">
+                <?php
+                $social_menu_items = wp_get_nav_menu_items('social-menu');
+                ?>
+                <div class="menu-social-menu-container">
+                    <ul id="menu-social-menu" class="menu">
+                    <?php
+                    foreach ($social_menu_items as $item) : ?>
+                        <li
+                            id="menu-item-<?= $item->ID ?>"
+                            class="menu-item menu-item-type-custom"
+                            style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/<?= $item->post_name; ?>.png')"
+                        >
+                            <a href="<?= $item->url ?>" data-target="<?= $item->post_name; ?>"></a>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div><!-- #menu-social-menu --> 
+			    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bikelogic' ); ?></button>
+            </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
