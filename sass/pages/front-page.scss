@@ -34,22 +34,39 @@
         text-decoration: none;
         color: #333333
     }
+    &:nth-child(1) img{
+        width: 180px;
+        height: 180px;
+    }
+    &:nth-child(2) img{
+        width: 210px;
+        height: 100px;
+    }
+    &:nth-child(3) img{
+        width: 150px;
+        height: 150px;
+    }
 }
+
 .front-page__service-content{
     display: flex;
 }
 .service-info{
     display: flex;
     flex-direction: column;
-    img{
-        width: 100px;
-        height: 100px;
-    }
     &.right{
-        justify-content: flex-start;
+        flex:2;
+        justify-content: center;
         align-items: flex-end;
     }
+    &.left{
+        align-items: center;
+        h3{
+            margin: 0;
+        }
+    }
 }
+
 
 
 .front-page__parallax-background {

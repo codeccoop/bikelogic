@@ -41,8 +41,7 @@ $page_ID = get_option('page_on_front');
                             <div class="front-page__service">
                                 <a href="<?php echo $post_url ?>"><div class="front-page__service-content">
                                     <div class="service-info left">
-                                        <img class="service-content__thumbnail" src="<?php
-                                        get_the_post_thumbnail_url($post_id)?>">
+                                        <?php the_post_thumbnail('post-thumbnails', array('class' => 'thumbnail'));?>
                                         <h3><?php echo get_the_title();?></h3>
                                     </div>
                                     <div class="service-info right">
