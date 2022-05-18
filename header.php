@@ -41,6 +41,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
+            <div class="main-navigation__columns">
             <div class="main-navigation__column left">
 			    <?php
 			    wp_nav_menu(
@@ -69,7 +70,10 @@
                     <?php endforeach; ?>
                     </ul>
                 </div><!-- #menu-social-menu --> 
-			    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bikelogic' ); ?></button>
             </div>
+            </div><!-- main-navigation__columns -->
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="burger"></span>
+            </button>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

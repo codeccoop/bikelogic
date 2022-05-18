@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "breakpoints.css",
+	"sources": [
+		"../../sass/base/mixins/breakpoints.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

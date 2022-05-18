@@ -1,0 +1,24 @@
+.main-navigation {
+  .menu-social-menu-container {
+    .menu {
+      display: flex;
+    }
+
+    li {
+      padding: 0;
+      margin-left: 0.65rem;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      > a {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+}

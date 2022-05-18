@@ -1,3 +1,7 @@
+/* Variables
+---------------------------------------------- */
+@import "variables/layout";
+
 /* Typography
 --------------------------------------------- */
 @import "typography/typography";
@@ -18,3 +22,7 @@
 --------------------------------------------- */
 @import "elements/buttons";
 @import "elements/fields";
+
+/* Mixins
+--------------------------------------------- */
+@import "mixins/breakpoints";
