@@ -45,8 +45,13 @@ $page_ID = get_option('page_on_front');
                             <div class="front-page__service">
                                 <a href="<?php echo $post_url ?>"><div class="front-page__service-content">
                                     <div class="service-info left">
-                                        <?php the_post_thumbnail('post-thumbnails', array('class' => 'thumbnail'));?>
+                                        <?php if (has_post_thumbnail($post_id)) : 
+                                         the_post_thumbnail('post-thumbnails', array('class' => 'thumbnail'));
+                                         else : ?>
+                                            <img class="thumbnail" src="<?php bloginfo('template_url');?>/assets/images/<?php echo get_the_title();?>.png" alt="Icona del servei <?php echo get_the_title()?>">
+                                        <?php endif ?>
                                     </div>
+                                    
                                     <div class="service-info right">
                                         <h3><?php echo get_the_title();?></h3>
                                         <p><?php echo get_the_excerpt();?></p>
