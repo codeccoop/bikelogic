@@ -1,5 +1,5 @@
 .front-page__section {
-	padding: 2vh 10vw;
+	padding: 2vh var(--content-padding);
 	background-color: white;
 }
 
@@ -9,13 +9,13 @@
 }
 
 .front-page__section#cover {
-	padding: 0 10vw;
+	padding: 0 var(--content-padding);
 }
 
 .front-page__cover-image {
 	max-width: 100vw;
 	width: calc(var(--vw, 1vw) * 100);
-	margin: 0 calc(10vw * -1);
+	margin: 0 calc(var(--content-padding) * -1);
 }
 
 .front-page__parallax-background {
