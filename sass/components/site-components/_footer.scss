@@ -1,7 +1,19 @@
 @import "../../base/variables/layout";
 
-.site-footer{
-    background-color: black;
-    padding: 1vh $content-padding-h 0;
-    color: white;
+.site-footer {
+  background-color: $color__bikelogic-gray;
+  padding: 1vh var(--content-padding) 0;
+}
+
+.site-footer__columns {
+  display: flex;
+  flex-direction: column;
+
+  @include m-media(md) {
+    flex-direction: row;
+  }
+}
+
+.site-footer__column {
+  flex: 1;
 }

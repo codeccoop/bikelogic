@@ -62,7 +62,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -394,8 +393,8 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: "Nunito", sans-serif;
-	font-size: 1rem;
-	line-height: 1.5;
+	font-size: 18px;
+	line-height: 1.6;
 }
 
 h1,
@@ -429,7 +428,7 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", courier, monospace;
-	line-height: 1.6;
+	line-height: 1.7;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -1078,9 +1077,23 @@ textarea {
 /* Footer
 --------------------------------------------- */
 .site-footer {
-	background-color: black;
-	padding: 1vh 20vw 0;
-	color: white;
+	background-color: #f2f2f2;
+	padding: 1vh var(--content-padding) 0;
+}
+
+.site-footer__columns {
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (min-width: 980px) {
+	.site-footer__columns {
+		flex-direction: row;
+	}
+}
+
+.site-footer__column {
+	flex: 1;
 }
 
 /*--------------------------------------------------------------
