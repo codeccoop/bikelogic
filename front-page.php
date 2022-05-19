@@ -17,14 +17,18 @@ $page_ID = get_option('page_on_front');
     <section id="cover" class="front-page__section">
         <?php 
             $image_id = get_field('portada', $page_ID);
-            if ( $image_id ) : 
-                $image_data=wp_get_attachment_image_src($image_id, 'full', false);?>
+            $image_data = null;
+            if ($image_id) {
+                $image_data=wp_get_attachment_image_src($image_id, 'full', false);
+            }
+
+            if ($image_data) : ?>
                 <img class="front-page__cover-image" src="<?php echo $image_data[0];?>" alt="Imatge de la portada">
             <?php else : ?>
                 <img class="front-page__cover-image" src="<?php bloginfo('template_url');?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
             <?php endif ?>
     </section>
-    <section id="services" class="front-page__section">
+    <section id="services" class="front-page__section" style="background-image: url('<?php bloginfo('template_url');?>/assets/images/iso_bl_color_pos.png');">
         <?php
             $args = array(
                'post_type' => 'servei',
@@ -38,10 +42,19 @@ $page_ID = get_option('page_on_front');
                             $query->the_post();
                             $post_id=get_the_ID();
                             $post_url=get_post_permalink($post_id);?>
-                            <a href="<?php echo $post_url ?>"><div class="front-page__service">
-                                <h1><?php echo get_the_title();?></h1>
-                                <p><?php echo get_the_excerpt();?></p>
-                            </div></a>
+                            <div class="front-page__service">
+                                <a href="<?php echo $post_url ?>"><div class="front-page__service-content">
+                                    <div class="service-info left">
+                                        <?php the_post_thumbnail('post-thumbnails', array('class' => 'thumbnail'));?>
+                                    </div>
+                                    <div class="service-info right">
+                                        <h3><?php echo get_the_title();?></h3>
+                                        <p><?php echo get_the_excerpt();?></p>
+                                        <button class="service-button">Més informació></button>
+                                    </div> 
+                                    
+                                </div></a>
+                            </div>
                         <?php endwhile; ?>
                 </div>
         

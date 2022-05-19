@@ -185,7 +185,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
- * Load custom post type SERVICE
+ * Load custom post types
  */
 
 require get_template_directory() . '/post_types/service.php';
+require get_template_directory() . '/post_types/valors.php';
