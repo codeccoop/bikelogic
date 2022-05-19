@@ -42,11 +42,11 @@ $page_ID = get_option('page_on_front');
                                 <a href="<?php echo $post_url ?>"><div class="front-page__service-content">
                                     <div class="service-info left">
                                         <?php the_post_thumbnail('post-thumbnails', array('class' => 'thumbnail'));?>
-                                        <h3><?php echo get_the_title();?></h3>
                                     </div>
                                     <div class="service-info right">
+                                        <h3><?php echo get_the_title();?></h3>
                                         <p><?php echo get_the_excerpt();?></p>
-                                        <button>Més informació</button>
+                                        <button class="service-button">Més informació></button>
                                     </div> 
                                     
                                 </div></a>

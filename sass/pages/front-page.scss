@@ -25,8 +25,9 @@
     background-position: right;
 }
 .front-page__service{
-    padding:  10px calc(calc(1 / 12)* 100vw);
-    margin: 40px 0;
+    padding:  22px calc(calc(0.5 / 12)* 100vw);
+    height: 160px;
+    margin: 30px 0;
     background-color: #f2f2f2;
     box-shadow: 1px 4px 3px #99999955;
     border-radius: 10px;
@@ -34,17 +35,13 @@
         text-decoration: none;
         color: #333333
     }
-    &:nth-child(1) img{
-        width: 180px;
-        height: 180px;
-    }
-    &:nth-child(2) img{
-        width: 210px;
+    img{
+        width: auto;
         height: 100px;
     }
-    &:nth-child(3) img{
-        width: 150px;
-        height: 150px;
+    &:nth-child(1) img{
+        width: auto;
+        height: 120px;
     }
 }
 
@@ -55,18 +52,32 @@
     display: flex;
     flex-direction: column;
     &.right{
-        flex:2;
-        justify-content: center;
-        align-items: flex-end;
+        padding-left: 40px;
+        flex:3;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        .service-button{
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            color: #3743B2;
+            font-weight: 800;
+            padding: 0;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            right: 0;
+        }
+        h3{
+            margin:0;
+        }
     }
     &.left{
         align-items: center;
-        h3{
-            margin: 0;
-        }
+        flex: 1;
+        justify-content: center;
     }
 }
-
 
 
 .front-page__parallax-background {
