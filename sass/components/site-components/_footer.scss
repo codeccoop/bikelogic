@@ -1,4 +1,4 @@
-@import "../../base/variables/layout";
+@use "sass:color";
 
 .site-footer {
   background-color: $color__bikelogic-gray;
@@ -8,6 +8,7 @@
 .site-footer__columns {
   display: flex;
   flex-direction: column;
+  padding-bottom: vh(2);
 
   @include m-media(md) {
     flex-direction: row;
@@ -16,4 +17,30 @@
 
 .site-footer__column {
   flex: 1;
+
+  &:first-child {
+    padding-right: vw(2);
+  }
+
+  &:last-child {
+    padding-left: vw(2);
+  }
+}
+
+input.contact__input,
+textarea.contact__textarea {
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+}
+
+.site-info {
+  text-align: center;
+  padding-bottom: 1rem;
+
+  a {
+    color: $color__bikelogic-black;
+    text-decoration: none;
+  }
 }
