@@ -7,6 +7,6 @@ function setViewport() {
   console.log("setViewport");
 }
 
-window.addEventListener("resize", setViewport);
-setViewport();
-setTimeout(setViewport, 250);
+// window.addEventListener("resize", setViewport);
+// setViewport();
+// setTimeout(setViewport, 250);

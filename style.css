@@ -397,6 +397,17 @@ textarea {
 	line-height: 1.6;
 }
 
+@media screen and (max-width: 700px) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 12px;
+	}
+}
+
 h1,
 h2,
 h3,
