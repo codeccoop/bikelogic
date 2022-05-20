@@ -79,10 +79,33 @@ $page_ID = get_option('page_on_front');
         </div>
         <div class="front-page__parallax-overlay">
             <?php if (get_field('projecte', $page_ID)) : ?>
-                    <h2><?php the_field('projecte', $page_ID); ?></h2>
-            <?php else : ?>
-                    <h2>Això no està funcionant</h2>
+                    <h3><?php the_field('projecte', $page_ID); ?></h3>
             <?php endif; ?> 
+            <div class="parallax-overlay__items-container">
+                <div class="items-container valor1">
+                    <?php 
+                        $missiovalors = get_field('missio_i_valors', $page_ID);
+                        $image1_data= wp_get_attachment_image_src($missiovalors['icona_valor_1'], 'full', false);?>
+                        <img src="<?php echo $image1_data[0]; ?>">
+                        <h3><?php echo $missiovalors['valor1']?></h3>
+                </div>
+                <div class="items-container valor2">
+                    <?php 
+                        $missiovalors = get_field('missio_i_valors', $page_ID);
+                        $image1_data= wp_get_attachment_image_src($missiovalors['icona_valor_2'], 'full', false);?>
+                        <img src="<?php echo $image1_data[0]; ?>">
+                        <h3><?php echo $missiovalors['valor2']?></h3>
+                </div>
+                <div class="items-container valor3">
+                    <?php 
+                        $missiovalors = get_field('missio_i_valors', $page_ID);
+                        $image1_data= wp_get_attachment_image_src($missiovalors['icona_valor_3'], 'full', false);?>
+                        <img src="<?php echo $image1_data[0]; ?>">
+                        <h3><?php echo $missiovalors['valor3']?></h3>
+                </div>
+            </div>
+            <button>Coneix-nos</button>
+
         </div>
     </section>
     <section id="team" class="front-page__section">
