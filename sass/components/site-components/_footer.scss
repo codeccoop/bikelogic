@@ -18,12 +18,14 @@
 .site-footer__column {
   flex: 1;
 
-  &:first-child {
-    padding-right: vw(2);
-  }
+  @include m-media(md) {
+    &:first-child {
+      padding-right: vw(3);
+    }
 
-  &:last-child {
-    padding-left: vw(2);
+    &:last-child {
+      padding-left: vw(3);
+    }
   }
 }
 
@@ -35,9 +37,55 @@ textarea.contact__textarea {
   padding: 0.25rem 0.75rem;
 }
 
+.contact__legal-name {
+  margin-bottom: 0;
+}
+
+.contact__street-address {
+  margin-top: 0px;
+}
+
+.contact__links {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.contact__link {
+  padding-left: 1.5rem;
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 1.2rem;
+    height: 1.2rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:first-child::before {
+    background-image: url("assets/images/icons/whatsapp.png");
+  }
+
+  &:last-child::before {
+    background-image: url("assets/images/icons/email.png");
+  }
+
+  a {
+    text-decoration: none;
+    color: $color__bikelogic-black;
+  }
+}
+
 .site-info {
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 
   a {
     color: $color__bikelogic-black;

@@ -3,19 +3,62 @@
 .front-page__section {
   padding: 2vh var(--content-padding);
   background-color: white;
+
   &.parallax-window {
     background-color: transparent;
     position: relative;
   }
+
   &#cover {
     padding: 0 var(--content-padding);
+    position: relative;
   }
 }
 
-.front-page__cover-image {
-  max-width: 100vw;
-  width: calc(var(--vw, 1vw) * 100);
-  margin: 0 calc(var(--content-padding) * -1);
+#cover {
+  .front-page__cover-image {
+    max-width: 100vw;
+    max-height: calc(100vh - #{$mobile-header-height});
+    width: calc(var(--vw, 1vw) * 100);
+    margin: 0 calc(var(--content-padding) * -1);
+    object-fit: cover;
+
+    @include m-media(sm) {
+      max-height: calc(100vh - #{$header-height});
+    }
+  }
+
+  .front-page__site-title {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    z-index: 10;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 var(--content-padding);
+    font-size: 1.4rem;
+    line-height: 1.2;
+
+    @include m-media(sm) {
+      font-size: 1.8rem;
+      line-height: 1.4;
+    }
+
+    img {
+      object-fit: contain;
+      width: vw(50);
+      height: 15%;
+      margin-bottom: 0.5rem;
+      margin-top: -2rem;
+    }
+  }
 }
 
 /*SERVICES*/
@@ -24,6 +67,7 @@
   background-size: 300px;
   background-position: right;
 }
+
 .front-page__service {
   padding: 22px calc(calc(0.5 / 12) * 100vw);
   height: 160px;

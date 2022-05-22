@@ -22,7 +22,22 @@
                 </div>
                 <div class="site-footer__column right">
                     <h2 class="contact__section-title">On sóm?</h2>
-                    <?= do_shortcode('[embedded_map]'); ?>
+                    <?php
+                    $coordinates = array_map('trim', explode(' ', get_theme_mod('map_coordinates')));
+                    $lat = $coordinates[0];
+                    $lng = $coordinates[1];
+                    echo do_shortcode('[embedded_map lng="' . $lng . '" lat="' . $lat . '"]');
+                    ?>
+                    <h3 class="contact__legal-name"><?= get_theme_mod('legal_name') ?></h3>
+                    <p class="contact__street-address" style="white-space: pre;"><?= get_theme_mod('street_address') ?></p>
+                    <ul class="contact__links">
+                        <li class="contact__link">
+                            <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>"><?= get_theme_mod('whatsapp'); ?></a>
+                        </li>
+                        <li class="contact__link">
+                            <a href="mailto:<?= get_theme_mod('email_address'); ?>"><?= get_theme_mod('email_address'); ?></a>
+                        </li>
+                    </ul>
                 </div>
             </div><!-- .site-footer__columns -->
             <div class="site-info">

@@ -205,3 +205,18 @@ require get_template_directory() . '/post_types/valors.php';
  * Load shortcodes
  */
 require get_template_directory() . '/shortcodes/embedded-map.php';
+
+/*
+ * Custom functions
+ */
+
+function bl_format_whatsapp($phone_num)
+{
+    return preg_replace('/-+/', '', preg_replace('/\s+/', '', preg_replace('/\·+/', '', preg_replace('/\++/', '', $phone_num))));
+}
+
+function bl_sanitize_image_attachment($input)
+{
+    error_log(attachment_url_to_postid($input)); //debug
+    return attachment_url_to_postid($input);
+}

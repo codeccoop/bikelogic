@@ -8,12 +8,17 @@
     flex-direction: column;
     position: absolute;
     left: vw(-100);
-    top: $header-height;
+    top: $mobile-header-height;
     transition: left 500ms ease-out;
     width: vw(100);
-    height: calc(#{vh(100)} - #{$header-height});
+    height: calc(#{vh(100)} - #{$mobile-header-height});
     background-color: white;
     box-shadow: inset 0px 5px 5px -5px #0003;
+
+    @include m-media(sm) {
+      top: $header-height;
+      height: calc(#{vh(100)} - #{$header-height});
+    }
 
     @include m-media(md) {
       position: initial;
@@ -141,7 +146,7 @@
   li {
     position: relative;
     padding-left: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 
     > a:hover,
     > a:focus {
@@ -207,23 +212,35 @@
   border: none;
   outline: none;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   padding: 0px;
   cursor: pointer;
   position: absolute;
   right: var(--content-padding);
-  top: 35px;
+  top: 50%;
   transform: translate(0, -50%);
+
+  @include m-media(sm) {
+    width: 40px;
+    height: 40px;
+  }
 
   .toggled & {
     .burger::after {
-      transform: translate(0, -7.5px) rotate(45deg);
+      transform: translate(0, -5.6px) rotate(45deg);
+
+      @include m-media(sm) {
+        transform: translate(0, -7.5px) rotate(45deg);
+      }
     }
 
     .burger::before {
-      transform: rotate(-45deg);
-      transform: translate(0, 7.5px) rotate(-45deg);
+      transform: translate(0, 5.6px) rotate(-45deg);
+
+      @include m-media(sm) {
+        transform: translate(0, 7.5px) rotate(-45deg);
+      }
     }
   }
 
@@ -238,19 +255,19 @@
     position: absolute;
     left: 0px;
     width: 100%;
-    height: 4px;
+    height: 10%;
     background-color: $color__bikelogic-black;
-    border-radius: 2px;
+    border-radius: 5%;
     transition: transform 300ms ease-out;
   }
 
   .burger::before {
     content: " ";
-    top: 10px;
+    top: 25%;
   }
 
   .burger::after {
     content: " ";
-    bottom: 10px;
+    bottom: 25%;
   }
 }
