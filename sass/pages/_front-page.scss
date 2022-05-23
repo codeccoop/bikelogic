@@ -64,8 +64,21 @@
 /*SERVICES*/
 #services {
   background-repeat: no-repeat;
-  background-size: 300px;
-  background-position: right;
+  background-size: 70%;
+  background-position-x: 95%;
+  background-position-y: center;
+
+  @include m-media(sm) {
+    background-size: 50%;
+  }
+
+  @include m-media(md) {
+    background-size: 30%;
+  }
+
+  @include m-media(xlg) {
+    background-size: 20%;
+  }
 }
 
 .front-page__service {

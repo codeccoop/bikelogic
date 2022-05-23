@@ -40,6 +40,11 @@ function bikelogic_customize_register($wp_customize)
         'sanitize_callback' => 'bl_sanitize_image_attachment',
         'default' => '',
     ));
+    $wp_customize->add_setting('jumbotron', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'bl_sanitize_image_attachment',
+        'default' => ''
+    ));
 
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
@@ -50,6 +55,19 @@ function bikelogic_customize_register($wp_customize)
                 'settings' => 'front_page_logo',
                 'section' => 'title_tagline',
                 'priority' => 50
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'my_front_page_jumbotron',
+            array(
+                'label' => 'Imàtge de la portada',
+                'settings' => 'jumbotron',
+                'section' => 'title_tagline',
+                'priority' => 55
             )
         )
     );

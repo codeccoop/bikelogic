@@ -15,6 +15,14 @@
     background-color: white;
     box-shadow: inset 0px 5px 5px -5px #0003;
 
+    .admin-bar & {
+      height: calc(#{vh(100)} - calc(#{$mobile-header-height} + 46px));
+
+      @include m-media(sm) {
+        height: calc(#{vh(100)} - calc(#{$header-height} + 32px));
+      }
+    }
+
     @include m-media(sm) {
       top: $header-height;
       height: calc(#{vh(100)} - #{$header-height});

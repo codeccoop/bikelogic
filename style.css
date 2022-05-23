@@ -684,6 +684,16 @@ textarea {
 	box-shadow: inset 0px 5px 5px -5px #0003;
 }
 
+.admin-bar .main-navigation .main-navigation__columns {
+	height: calc(calc(var(--vh, 1vh) * 100) - calc(50px + 46px));
+}
+
+@media screen and (min-width: 769px) {
+	.admin-bar .main-navigation .main-navigation__columns {
+		height: calc(calc(var(--vh, 1vh) * 100) - calc(75px + 32px));
+	}
+}
+
 @media screen and (min-width: 769px) {
 	.main-navigation .main-navigation__columns {
 		top: 75px;
@@ -1392,8 +1402,27 @@ textarea.contact__textarea {
 /*SERVICES*/
 #services {
 	background-repeat: no-repeat;
-	background-size: 300px;
-	background-position: right;
+	background-size: 70%;
+	background-position-x: 95%;
+	background-position-y: center;
+}
+
+@media screen and (min-width: 769px) {
+	#services {
+		background-size: 50%;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	#services {
+		background-size: 30%;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	#services {
+		background-size: 20%;
+	}
 }
 
 .front-page__service {

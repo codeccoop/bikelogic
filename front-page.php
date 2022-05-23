@@ -17,7 +17,7 @@ $page_ID = get_option('page_on_front');
 <main class="front-page">
     <section id="cover" class="front-page__section">
         <?php
-        $image_id = get_field('portada', $page_ID);
+        $image_id = get_theme_mod('jumbotron');
         $image_data = null;
         if ($image_id) {
             $image_data = wp_get_attachment_image_src($image_id, 'full', false);
@@ -26,7 +26,7 @@ $page_ID = get_option('page_on_front');
         if ($image_data) : ?>
             <img class="front-page__cover-image" src="<?php echo $image_data[0]; ?>" alt="Imatge de la portada">
         <?php else : ?>
-            <img class="front-page__cover-image" src="<?php bloginfo('template_url'); ?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
+            <img class="front-page__cover-image" src="<?= get_bloginfo('template_url'); ?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
         <?php endif;
         $site_description = get_bloginfo('description', 'display');
         $site_name = get_bloginfo('name');
@@ -37,11 +37,11 @@ $page_ID = get_option('page_on_front');
                 if ($brand_image_id) {
                     $brand_image_url = wp_get_attachment_image_src($brand_image_id, 'full', false)[0];
                 } else {
-                    $brand_image_url = bloginfo('template_url') . '/assets/images/biklogic-brand--white.png';
+                    $brand_image_url = get_bloginfo('template_url') . '/assets/images/bikelogic-brand--white.png';
                 }
                 ?>
-                <img src="<?= $brand_image_url ?>" />
-                <?= $site_description ?>
+                <img src="<?= $brand_image_url; ?>" />
+                <?= $site_description; ?>
             </h1>
         <?php endif; ?>
     </section>
@@ -69,7 +69,6 @@ $page_ID = get_option('page_on_front');
                                         <img class="thumbnail" src="<?php bloginfo('template_url'); ?>/assets/images/<?php echo get_the_title(); ?>.png" alt="Icona del servei <?php echo get_the_title() ?>">
                                     <?php endif ?>
                                 </div>
-
                                 <div class="service-info right">
                                     <h3><?php echo get_the_title(); ?></h3>
                                     <p><?php echo get_the_excerpt(); ?></p>
