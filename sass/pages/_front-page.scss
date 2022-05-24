@@ -100,6 +100,20 @@
     width: auto;
     height: 120px;
   }
+  @include m-media(zr, xsm) {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:nth-child(n) img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  @include m-media(xsm, sm) {
+    height: 190px;
+  }
 }
 
 .front-page__service-content {
@@ -113,6 +127,10 @@
     flex: 3;
     justify-content: space-evenly;
     align-items: flex-start;
+    @include m-media(zr, sm) {
+      flex: 2;
+      padding-left: 20px;
+    }
     .service-button {
       margin-left: auto;
       background-color: transparent;
@@ -133,6 +151,9 @@
     align-items: center;
     flex: 1;
     justify-content: center;
+    @include m-media(zr, sm) {
+      flex: 2;
+    }
   }
 }
 
@@ -160,10 +181,10 @@
   padding: 2vh 2vw;
   background-color: #ffffff;
   border-radius: 10px;
-  height: 80vh;
+  height: auto;
   margin: 5vh 0;
   @include m-media(zr, xsm) {
-    height: 110vh;
+    padding: 2vh 4vw;
   }
 
   button {
