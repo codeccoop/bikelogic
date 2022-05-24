@@ -3,12 +3,23 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
+<<<<<<< HEAD
   border-radius: 3px;
   background: #333333;
   color: white;
   line-height: 1;
   padding: 0.6em 1em 0.4em;
   width: fit-content;
+=======
+  border-color: $color__border-button;
+  border-radius: 5px;
+  background: $color__bikelogic-black;
+  color: white;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.6em 2.2em 0.4em;
+  cursor: pointer;
+>>>>>>> develop
 
   &:hover {
     border-color: $color__border-button-hover;
