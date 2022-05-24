@@ -27,11 +27,11 @@
 --------------------------------------------- */
 @import "media/galleries";
 
-/* Header
+/* Site Components
 --------------------------------------------- */
 @import "site-components/header";
-
-/* Footer
---------------------------------------------- */
 @import "site-components/footer";
 
+/* Shortcodes
+--------------------------------------------- */
+@import "shortcodes/embedded-map";

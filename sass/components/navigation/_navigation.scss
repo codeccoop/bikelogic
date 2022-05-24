@@ -21,6 +21,10 @@
       @include m-media(sm) {
         height: calc(#{vh(100)} - calc(#{$header-height} + 32px));
       }
+
+      @include m-media(md) {
+        height: $header-height;
+      }
     }
 
     @include m-media(sm) {

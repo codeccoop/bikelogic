@@ -37,6 +37,14 @@ textarea.contact__textarea {
   padding: 0.25rem 0.75rem;
 }
 
+.contact__map.bl_embedded_map {
+  height: 180px;
+
+  @include m-media(sm) {
+    height: 280px;
+  }
+}
+
 .contact__legal-name {
   margin-bottom: 0;
 }
