@@ -397,7 +397,7 @@ textarea {
 	line-height: 1.6;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 640px) {
 	body,
 	button,
 	input,
@@ -559,12 +559,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	background: #333333;
+	color: white;
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
+	width: fit-content;
 }
 
 button:hover,
@@ -1308,24 +1308,29 @@ textarea {
 	padding: 2vh 2vw;
 	background-color: #ffffff;
 	border-radius: 10px;
-	height: 100vh;
+	height: 80vh;
 	margin: 5vh 0;
 }
 
-.front-page__parallax-overlay > h3 {
-	text-align: center;
-	padding: 0 5vw;
-	margin: 0;
+@media screen and (min-width: 0px) and (max-width: 640px) {
+	.front-page__parallax-overlay {
+		height: 110vh;
+	}
 }
 
-.front-page__parallax-overlay > button {
-	width: 200px;
-	cursor: pointer;
-	background-color: #333333;
-	color: white;
+.front-page__parallax-overlay button {
 	font-weight: 800;
-	text-align: center;
+	margin-bottom: 1.5em;
 	align-self: center;
+	cursor: pointer;
+}
+
+.parallax-overlay__text {
+	padding-top: 1.5em;
+}
+
+.parallax-overlay__text > p {
+	margin: 0;
 }
 
 .parallax-overlay__items-container {
@@ -1339,6 +1344,13 @@ textarea {
 	height: auto;
 }
 
+@media screen and (min-width: 0px) and (max-width: 640px) {
+	.parallax-overlay__items-container {
+		flex-direction: column;
+		margin-top: 1.5em;
+	}
+}
+
 .items-container {
 	flex: 1;
 	display: flex;
@@ -1347,12 +1359,14 @@ textarea {
 	justify-content: center;
 }
 
-.items-container h3 {
-	text-align: center;
+.items-container.valor2 {
+	padding-top: 48px;
 }
 
-.items-container.valor2 {
-	padding-top: 56px;
+@media screen and (min-width: 0px) and (max-width: 640px) {
+	.items-container.valor2 {
+		padding-top: 0px;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */

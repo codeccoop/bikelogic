@@ -111,24 +111,23 @@
 	padding: 2vh 2vw;
 	background-color: #ffffff;
 	border-radius: 10px;
-	height: 100vh;
+	height: 80vh;
 	margin: 5vh 0;
 }
 
-.front-page__parallax-overlay > h3 {
-	text-align: center;
-	padding: 0 5vw;
-	margin: 0;
+.front-page__parallax-overlay button {
+	font-weight: 800;
+	margin-bottom: 1.5em;
+	align-self: center;
+	cursor: pointer;
 }
 
-.front-page__parallax-overlay > button {
-	width: 200px;
-	cursor: pointer;
-	background-color: #333333;
-	color: white;
-	font-weight: 800;
-	text-align: center;
-	align-self: center;
+.parallax-overlay__text {
+	padding-top: 1.5em;
+}
+
+.parallax-overlay__text > p {
+	margin: 0;
 }
 
 .parallax-overlay__items-container {
@@ -150,12 +149,8 @@
 	justify-content: center;
 }
 
-.items-container h3 {
-	text-align: center;
-}
-
 .items-container.valor2 {
-	padding-top: 56px;
+	padding-top: 48px;
 }
 
 /*# sourceMappingURL=front-page.css.map */
