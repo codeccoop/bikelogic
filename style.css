@@ -1105,7 +1105,7 @@ textarea {
 	display: block;
 }
 
-/* Header
+/* Site Components
 --------------------------------------------- */
 .site-header {
 	height: 50px;
@@ -1151,8 +1151,6 @@ textarea {
 	}
 }
 
-/* Footer
---------------------------------------------- */
 @use "sass:color";
 .site-footer {
 	background-color: #f2f2f2;
@@ -1190,6 +1188,16 @@ textarea.contact__textarea {
 	border-radius: 5px;
 	width: 100%;
 	padding: 0.25rem 0.75rem;
+}
+
+.contact__map.bl_embedded_map {
+	height: 180px;
+}
+
+@media screen and (min-width: 769px) {
+	.contact__map.bl_embedded_map {
+		height: 280px;
+	}
 }
 
 .contact__legal-name {
@@ -1246,6 +1254,14 @@ textarea.contact__textarea {
 .site-info a {
 	color: #333333;
 	text-decoration: none;
+}
+
+/* Shortcodes
+--------------------------------------------- */
+.bl_embedded_map {
+	height: 280px;
+	width: auto;
+	border-radius: 5px;
 }
 
 /*--------------------------------------------------------------

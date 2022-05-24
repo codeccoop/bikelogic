@@ -18,7 +18,7 @@
             <div class="site-footer__columns">
                 <div class="site-footer__column left">
                     <h2 class="contact__section-title">Vols contractar els nostres servèis?</h3>
-                        <?php echo do_shortcode('[contact-form-7 id="37" title="Contact"]'); ?>
+                        <?= do_shortcode('[contact-form-7 id="37" title="Contact"]'); ?>
                 </div>
                 <div class="site-footer__column right">
                     <h2 class="contact__section-title">On sóm?</h2>
@@ -26,7 +26,7 @@
                     $coordinates = array_map('trim', explode(' ', get_theme_mod('map_coordinates')));
                     $lat = $coordinates[0];
                     $lng = $coordinates[1];
-                    echo do_shortcode('[embedded_map lng="' . $lng . '" lat="' . $lat . '"]');
+                    echo do_shortcode('[embedded_map lng="' . $lng . '" lat="' . $lat . '" class="contact__map"]');
                     ?>
                     <h3 class="contact__legal-name"><?= get_theme_mod('legal_name') ?></h3>
                     <p class="contact__street-address" style="white-space: pre;"><?= get_theme_mod('street_address') ?></p>

@@ -5,21 +5,34 @@ function bl_sc_embedded_map($atts = [], $content = null, $tag = '')
 
     extract(shortcode_atts(
         array(
-            'width' => 'auto',
-            'height' => '280px',
+            'width' => null,
+            'height' => null,
             'marker' => true,
             'lat' => 41.50281,
             'lng' => 1.81346,
-            'zoom' => 14.5
+            'zoom' => 14.5,
+            'class' => null
         ),
         $atts,
         $tag
     ));
 
     $id = uniqid();
-    $content = '<div id="' . $id . '" style="width: ' . $width . '; height: ' . $height . ';"></div>';
 
+    $styles = '';
+    if ($height) {
+        $style .= 'height: ' . $height . ';';
+    }
+    if ($width) {
+        $style .= 'width: ' . $width . ';';
+    }
 
+    $classes = 'bl_embedded_map';
+    if ($class) {
+        $classes .= ' ' . $class;
+    }
+
+    $content = '<div id="' . $id . '" class="' . $classes . '" style="' . $style . '"></div>';
 
     if (!wp_script_is('mapbox-gl-js')) {
         wp_enqueue_script('mapbox-gl-js');
