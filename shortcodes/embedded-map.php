@@ -19,7 +19,7 @@ function bl_sc_embedded_map($atts = [], $content = null, $tag = '')
 
     $id = uniqid();
 
-    $styles = '';
+    $style = '';
     if ($height) {
         $style .= 'height: ' . $height . ';';
     }
