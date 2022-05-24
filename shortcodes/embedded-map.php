@@ -1,17 +1,19 @@
 <?php
-function bl_sc_embedded_map($atts = array(), $content = null)
+function bl_sc_embedded_map($atts = [], $content = null, $tag = '')
 {
     $atts = array_change_key_case((array) $atts, CASE_LOWER);
+
     extract(shortcode_atts(
         array(
-            'width' => '400px',
+            'width' => 'auto',
             'height' => '280px',
             'marker' => true,
             'lat' => 41.50281,
             'lng' => 1.81346,
             'zoom' => 14.5
         ),
-        $atts
+        $atts,
+        $tag
     ));
 
     $id = uniqid();
@@ -27,19 +29,19 @@ function bl_sc_embedded_map($atts = array(), $content = null)
         wp_enqueue_style('mapbox-gl-css');
     }
 
-    $script = "<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        mapboxgl.accessToken = 'pk.eyJ1Ijoib3J6b2MiLCJhIjoiY2lzZGEzNXhmMDAwdjJvcGZ4NXU2bzU0NCJ9.RzrN_JISe561WfI1SjWCvw';
+    $script = '<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        mapboxgl.accessToken = "pk.eyJ1Ijoib3J6b2MiLCJhIjoiY2lzZGEzNXhmMDAwdjJvcGZ4NXU2bzU0NCJ9.RzrN_JISe561WfI1SjWCvw";
         const map = new mapboxgl.Map({
-         container: '" . $id . "', // container ID
-         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-         center: [" . $lng . "," . $lat . "], // starting position [lng, lat]
-         zoom: " . $zoom . ", // starting zoom
+         container: "' . $id . '", // container ID
+         style: "mapbox://styles/mapbox/streets-v11", // style URL
+         center: [' . $lng . ', ' . $lat . '], // starting position [lng, lat]
+         zoom: ' . $zoom . ', // starting zoom
         });
         map.addControl(new mapboxgl.NavigationControl());
-        new mapboxgl.Marker().setLngLat([" . $lng . ", " . $lat . "]).addTo(map);
+        new mapboxgl.Marker().setLngLat([' . $lng . ', ' . $lat . ']).addTo(map);
     });
-    </script>";
+    </script>';
 
     return $content . $script;
 }

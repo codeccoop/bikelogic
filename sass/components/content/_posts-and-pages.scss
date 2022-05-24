@@ -8,7 +8,11 @@
 }
 
 .page {
-  padding-top: $header-height;
+  padding-top: $mobile-header-height;
+
+  @include m-media(sm) {
+    padding-top: $header-height;
+  }
 }
 
 .updated:not(.published) {
