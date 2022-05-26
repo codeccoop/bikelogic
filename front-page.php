@@ -97,29 +97,29 @@ $page_ID = get_option('page_on_front');
         </div>
         <div class="front-page__parallax-overlay">
             <?php if (get_field('projecte', $page_ID)) : ?>
-                    <div class="parallax-overlay__text"><?php the_field('projecte', $page_ID); ?></div>
-            <?php endif; ?> 
+                <div class="parallax-overlay__text"><?php the_field('projecte', $page_ID); ?></div>
+            <?php endif; ?>
             <div class="parallax-overlay__items-container">
                 <div class="items-container valor1">
-                    <?php 
-                        $missiovalors = get_field('missio_i_valors', $page_ID);
-                        $image1_data= wp_get_attachment_image_src($missiovalors['icona_valor_1'], 'full', false);?>
-                        <img src="<?php echo $image1_data[0]; ?>">
-                        <div><?php echo $missiovalors['valor1']?></div>
+                    <?php
+                    $missiovalors = get_field('missio_i_valors', $page_ID);
+                    $image1_data = wp_get_attachment_image_src($missiovalors['icona_valor_1'], 'full', false); ?>
+                    <img src="<?php echo $image1_data[0]; ?>">
+                    <div><?php echo $missiovalors['valor1'] ?></div>
                 </div>
                 <div class="items-container valor2">
-                    <?php 
-                        $missiovalors = get_field('missio_i_valors', $page_ID);
-                        $image1_data= wp_get_attachment_image_src($missiovalors['icona_valor_2'], 'full', false);?>
-                        <img src="<?php echo $image1_data[0]; ?>">
-                        <div><?php echo $missiovalors['valor2']?></div>
+                    <?php
+                    $missiovalors = get_field('missio_i_valors', $page_ID);
+                    $image1_data = wp_get_attachment_image_src($missiovalors['icona_valor_2'], 'full', false); ?>
+                    <img src="<?php echo $image1_data[0]; ?>">
+                    <div><?php echo $missiovalors['valor2'] ?></div>
                 </div>
                 <div class="items-container valor3">
-                    <?php 
-                        $missiovalors = get_field('missio_i_valors', $page_ID);
-                        $image1_data= wp_get_attachment_image_src($missiovalors['icona_valor_3'], 'full', false);?>
-                        <img src="<?php echo $image1_data[0]; ?>">
-                        <div><?php echo $missiovalors['valor3']?></div>
+                    <?php
+                    $missiovalors = get_field('missio_i_valors', $page_ID);
+                    $image1_data = wp_get_attachment_image_src($missiovalors['icona_valor_3'], 'full', false); ?>
+                    <img src="<?php echo $image1_data[0]; ?>">
+                    <div><?php echo $missiovalors['valor3'] ?></div>
                 </div>
             </div>
             <button>Coneix-nos</button>
