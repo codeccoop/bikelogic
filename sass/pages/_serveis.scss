@@ -1,0 +1,52 @@
+article.servei {
+  padding-top: $header-height;
+}
+
+.service-header {
+  background-color: white;
+  padding: 2rem var(--content-padding);
+  display: flex;
+  justify-content: center;
+}
+.service-header__column {
+  &.right {
+    flex: 2;
+    align-self: center;
+  }
+  &.left {
+    flex: 1;
+  }
+}
+
+.service-content {
+  background-color: white;
+  padding: 4rem var(--content-padding);
+}
+
+.service-parallax {
+  position: relative;
+  background-color: transparent;
+  height: 100vh;
+  padding: 0 var(--content-padding);
+}
+.service-parallax__overlay {
+  position: absolute;
+  top: 2rem;
+  left: var(--content-padding);
+  width: 50%;
+  background-color: white;
+  border-radius: 20px;
+}
+.service-parallax__background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

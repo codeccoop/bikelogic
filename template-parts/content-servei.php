@@ -10,28 +10,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title" style="color:red;">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
+	<header class="service-header">
+		<div class="service-header__column left">
+			<?php the_post_thumbnail(); ?>
+		</div>
+		<div class="service-header__column right">
+			<?php
+				the_title( '<h1 class="entry-title" style="color:red;">', '</h1>' );
 			?>
-			<div class="entry-meta">
-				<?php
-				bikelogic_posted_on();
-				bikelogic_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		</div>
+		
 	</header><!-- .entry-header -->
 
-	<?php bikelogic_post_thumbnail(); ?>
-
-	<div class="entry-content">
+	<div class="service-content">
 		<?php
 		the_content(
 			sprintf(
@@ -46,18 +37,23 @@
 				),
 				wp_kses_post( get_the_title() )
 			)
-		);
+		);?>
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bikelogic' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php bikelogic_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		</div><!-- .entry-content -->
+		<?php
+		$parallax=get_field('parallax');
+		if($parallax['boto_parallax']){ ?>
+			<div class="service-parallax">
+				<div class="service-parallax__background">
+					<?php $image_id=$parallax['imatge_parallax'];
+						$image_src=wp_get_attachment_image_src($image_id, 'full', false)[0];
+					 ?>
+					 <img src="<?= $image_src ?>" alt="Imatge de fons del parallax">
+				</div>
+				<div class="service-parallax__overlay">
+					<?php echo $parallax['text_parallax'];?>
+				</div>
+			</div>
+		<?php } ?>
+	
 </article><!-- #post-<?php the_ID(); ?> -->
