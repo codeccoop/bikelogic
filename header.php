@@ -35,7 +35,7 @@
                                         if (has_custom_logo()) :
                                             the_custom_logo();
                                         else : ?>
-                    <a href="http://bikelogic.orzopad.net/" class="custom-logo-link" rel="home" aria-current="page">
+                    <a href="<?= get_site_url(); ?>" class="custom-logo-link" rel="home" aria-current="page">
                         <img src="<?= bloginfo('template_url'); ?>/assets/images/bikelogic-brand.png" class="custom-logo" alt="Bikelogic">
                     </a>
                 <?php endif; ?>
