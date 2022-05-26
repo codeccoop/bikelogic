@@ -12,12 +12,18 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="service-header">
 		<div class="service-header__column left">
-			<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail(); ?>
 		</div>
 		<div class="service-header__column right">
 			<?php
-				the_title( '<h1 class="entry-title" style="color:red;">', '</h1>' );
-			?>
+				$post_id=get_the_ID();?>
+				<h1><?php echo get_the_title( $post_id);?></h1>
+				<?php if (get_field('subtitol',$post_id)) : ?>
+					<h2><?php the_field( 'subtitol', $post_id);?></h2>
+				<?php else : ?>
+					<h2><?php echo get_the_excerpt( $post_id);?></h2>
+				<?php endif ?>
+			
 		</div>
 		
 	</header><!-- .entry-header -->

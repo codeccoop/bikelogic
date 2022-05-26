@@ -1632,38 +1632,50 @@ article.servei {
 }
 
 .service-header {
-	background-color: white;
-	padding: 2rem var(--content-padding);
 	display: flex;
 	justify-content: center;
+	align-items: stretch;
+	background-color: #f2f2f2;
 }
 
 .service-header__column.right {
 	flex: 2;
-	align-self: center;
+	padding-left: 4em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	color: white;
+	background-color: #333333;
 }
 
 .service-header__column.left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2em 1em;
 	flex: 1;
+	background-color: #6f9984;
 }
 
 .service-content {
+	display: block;
 	background-color: white;
 	padding: 4rem var(--content-padding);
 }
 
 .service-parallax {
 	position: relative;
+	box-sizing: inherit;
 	background-color: transparent;
-	height: 100vh;
 	padding: 0 var(--content-padding);
 }
 
 .service-parallax__overlay {
-	position: absolute;
-	top: 2rem;
-	left: var(--content-padding);
+	padding: 4vh 4vw;
+	margin: 4em 0;
 	width: 50%;
+	height: auto;
 	background-color: white;
 	border-radius: 20px;
 }
