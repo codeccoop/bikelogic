@@ -1632,7 +1632,19 @@ article.servei {
 }
 
 .service-header {
-	background-color: #333333;
+	background-color: white;
+	padding: 2rem var(--content-padding);
+	display: flex;
+	justify-content: center;
+}
+
+.service-header__column.right {
+	flex: 2;
+	align-self: center;
+}
+
+.service-header__column.left {
+	flex: 1;
 }
 
 .service-content {

@@ -14,7 +14,6 @@ function bl_post_service_item() {
         'menu_position' => 5,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
         'show_in_rest'  => true,
-        'supports'      => array('editor'),
         'has_archive'   => false,
       );
     register_post_type( 'servei', $args );
