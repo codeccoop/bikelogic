@@ -82,56 +82,71 @@
 }
 
 .front-page__service {
-  padding: 22px calc(calc(0.5 / 12) * 100vw);
+  padding: 2rem vw(6);
   height: 160px;
-  margin: 30px 0;
+  margin: 2rem 0;
   background-color: #f2f2f2;
-  box-shadow: 1px 4px 3px #99999955;
+  box-shadow: 1px 4px 5px #0002;
   border-radius: 10px;
+  transition: box-shadow 200ms ease-in, transform 200ms ease-in;
+
+  &:hover {
+    box-shadow: 4px 6px 10px #0002;
+    transform: translate(-3px, -3px);
+
+    .service-button {
+      text-decoration: underline;
+    }
+  }
+
   a {
+    display: block;
+    height: 100%;
     text-decoration: none;
     color: #333333;
   }
-  img {
-    width: auto;
-    height: 100px;
-  }
-  &:nth-child(1) img {
-    width: auto;
-    height: 120px;
-  }
-  @include m-media(zr, xsm) {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:nth-child(n) img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  }
-  @include m-media(xsm, sm) {
-    height: 190px;
+
+  @include m-media(sm) {
+    margin: 1rem 0;
+    padding: 1rem vw(3);
   }
 }
 
 .front-page__service-content {
   display: flex;
+  height: 100%;
+
+  img {
+    height: calc(160px - 2rem);
+    width: calc(160px - 2rem);
+    object-fit: contain;
+    object-position: center;
+  }
 }
+
 .service-info {
   display: flex;
   flex-direction: column;
+
   &.right {
     padding-left: 40px;
     flex: 3;
-    justify-content: space-evenly;
     align-items: flex-start;
+    position: relative;
+
+    > p {
+      margin: 0;
+    }
+
     @include m-media(zr, sm) {
       flex: 2;
       padding-left: 20px;
     }
+
     .service-button {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
       margin-left: auto;
       background-color: transparent;
       border: none;
@@ -140,20 +155,18 @@
       padding: 0;
       cursor: pointer;
       text-align: center;
-      text-decoration: none;
       right: 0;
     }
+
     h3 {
       margin: 0;
     }
   }
+
   &.left {
     align-items: center;
     flex: 1;
     justify-content: center;
-    @include m-media(zr, sm) {
-      flex: 2;
-    }
   }
 }
 
@@ -183,17 +196,23 @@
   border-radius: 10px;
   height: auto;
   margin: 5vh 0;
+
   @include m-media(zr, xsm) {
     padding: 2vh 4vw;
   }
 
   button {
-    font-weight: 800;
-    margin-bottom: 1.5em;
-    align-self: center;
+    margin: 0 auto 1.5em;
+    width: fit-content;
     cursor: pointer;
+
+    > a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }
+
 .parallax-overlay__text {
   padding-top: 1.5em;
   > p {
@@ -205,24 +224,29 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   img {
     width: 100px;
     height: auto;
   }
+
   @include m-media(zr, xsm) {
     flex-direction: column;
     margin-top: 1.5em;
   }
 }
+
 .items-container {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   &.valor2 {
     padding-top: 48px;
   }
+
   @include m-media(zr, xsm) {
     &.valor2 {
       padding-top: 0px;

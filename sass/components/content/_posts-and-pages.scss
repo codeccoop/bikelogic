@@ -7,12 +7,9 @@
   margin: 0;
 }
 
-.page {
-  padding-top: $mobile-header-height;
-
-  @include m-media(sm) {
-    padding-top: $header-height;
-  }
+body.page,
+body.post {
+  padding-top: var(--header-height);
 }
 
 .updated:not(.published) {
