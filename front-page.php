@@ -122,7 +122,7 @@ $page_ID = get_option('page_on_front');
                     <div><?php echo $missiovalors['valor3'] ?></div>
                 </div>
             </div>
-            <button>Coneix-nos</button>
+            <button><a href="<?= get_page_link(get_page_by_title('El projecte')->ID); ?>">Coneix-nos</a></button>
         </div>
     </section>
 </main>

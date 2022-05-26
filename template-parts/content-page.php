@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying page content in page.php
  *
@@ -7,48 +8,33 @@
  * @package bikelogic
  */
 
+$page_ID = get_the_ID();
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<?php bikelogic_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bikelogic' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'bikelogic' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+<article id="post-<?php $page_ID; ?>" <?php post_class(); ?>>
+    <header class="page-header">
+        <?php the_title('<h1 class="page-title">', '</h1>'); ?>
+        <h3 class="page-subtitle"><?php the_field('page-subtitle'); ?></h3>
+        <?php the_post_thumbnail(); ?>
+    </header><!-- .entry-header -->
+    <div class="page-content">
+        <?php
+        the_content();
+        ?>
+    </div><!-- .entry-content -->
+    <?php
+    $parallax = get_field('page-parallax', $page_ID);
+    if ($parallax['show']) : ?>
+        <div class="page-parallax">
+            <div class="page-parallax__background">
+                <?php
+                $image_ID = $parallax['image'];
+                $image_src = wp_get_attachment_image_src($image_ID, 'full', false)[0];
+                ?>
+                <img src="<?= $image_src ?>" alt="Imatge de fons del parallax" aria-hidden="true">
+            </div>
+            <div class="page-parallax__overlay">
+                <?= $parallax['text']; ?>
+            </div>
+        </div>
+    <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

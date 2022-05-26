@@ -196,17 +196,23 @@
   border-radius: 10px;
   height: auto;
   margin: 5vh 0;
+
   @include m-media(zr, xsm) {
     padding: 2vh 4vw;
   }
 
   button {
-    font-weight: 800;
-    margin-bottom: 1.5em;
-    align-self: center;
+    margin: 0 auto 1.5em;
+    width: fit-content;
     cursor: pointer;
+
+    > a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }
+
 .parallax-overlay__text {
   padding-top: 1.5em;
   > p {
@@ -218,24 +224,29 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   img {
     width: 100px;
     height: auto;
   }
+
   @include m-media(zr, xsm) {
     flex-direction: column;
     margin-top: 1.5em;
   }
 }
+
 .items-container {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   &.valor2 {
     padding-top: 48px;
   }
+
   @include m-media(zr, xsm) {
     &.valor2 {
       padding-top: 0px;
