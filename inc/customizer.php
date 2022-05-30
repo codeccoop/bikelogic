@@ -145,7 +145,7 @@ function bikelogic_customize_register($wp_customize)
     $wp_customize->remove_section('colors');
     $wp_customize->remove_section('background_image');
     $wp_customize->remove_section('widgets');
-    $wp_customize->remove_section('static_front_page');
+    // $wp_customize->remove_section('static_front_page');
 }
 add_action('customize_register', 'bikelogic_customize_register');
 

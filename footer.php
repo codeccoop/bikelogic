@@ -18,7 +18,7 @@
             <div class="site-footer__columns">
                 <div class="site-footer__column left">
                     <h2 class="contact__section-title">Vols contractar els nostres servèis?</h3>
-                        <?= do_shortcode('[contact-form-7 id="6" title="Contact"]'); ?>
+                        <?= do_shortcode('[contact-form-7 id="21" title="Contact"]'); ?>
                 </div>
                 <div class="site-footer__column right">
                     <h2 class="contact__section-title">On sóm?</h2>

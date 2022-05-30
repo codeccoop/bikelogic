@@ -169,6 +169,34 @@
     justify-content: center;
   }
 }
+//INTERSECTION//
+#intersection {
+  background-color: $color__bikelogic-black;
+}
+.intersection__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10vh 0;
+}
+.intersection__text {
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  width: 80%;
+  line-height: 1.2;
+  @include m-media(zr, sm) {
+    font-size: 0.8em;
+  }
+}
+.intersection__image {
+  width: 15%;
+  margin-top: 3em;
+  @include m-media(zr, sm) {
+    width: 40%;
+  }
+}
 
 //VALORS//
 
