@@ -63,35 +63,57 @@
 
 /*SERVICES*/
 #services {
+  height: vh(100);
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-color: white;
+  /* background-color: $color__bikelogic-green; */
+  background-image: url("/wp-content/themes/bikelogic/assets/images/iso_bl_color_pos.png");
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: 80%;
   background-position-x: 95%;
   background-position-y: center;
 
   @include m-media(sm) {
-    background-size: 50%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background-size: 60%;
   }
 
   @include m-media(md) {
-    background-size: 30%;
+    background-size: 40%;
   }
 
   @include m-media(xlg) {
-    background-size: 20%;
+    background-size: 30%;
   }
 }
 
+.front-page__services-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .front-page__service {
-  padding: 2rem vw(6);
-  height: 160px;
-  margin: 2rem 0;
-  background-color: #f2f2f2;
-  box-shadow: 1px 4px 5px #0002;
+  height: 30vh;
+  margin: calc(5vh / 6) 0;
+  background-color: white;
+  background-color: $color__bikelogic-green;
+  color: white;
+  box-shadow: -2px -2px 5px #0002, 1px 4px 5px #0003;
   border-radius: 10px;
   transition: box-shadow 200ms ease-in, transform 200ms ease-in;
 
+  @include m-media(sm) {
+    margin: calc(5vh / 6) 0;
+    height: 25vh;
+    max-height: 250px;
+  }
+
   &:hover {
-    box-shadow: 4px 6px 10px #0002;
+    box-shadow: 3px 5px 10px #0003;
     transform: translate(-3px, -3px);
 
     .service-button {
@@ -103,70 +125,110 @@
     display: block;
     height: 100%;
     text-decoration: none;
-    color: #333333;
+    color: white;
+    color: $color__bikelogic-black;
   }
 
   @include m-media(sm) {
     margin: 1rem 0;
-    padding: 1rem vw(3);
   }
 }
 
 .front-page__service-content {
   display: flex;
+  flex-direction: column;
   height: 100%;
 
-  img {
-    height: calc(160px - 2rem);
-    width: calc(160px - 2rem);
-    object-fit: contain;
-    object-position: center;
+  @include m-media(sm) {
+    flex-direction: row;
   }
 }
 
 .service-info {
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  flex: 1;
+
+  @include m-media(sm) {
+    height: 100%;
+  }
 
   &.right {
-    padding-left: 40px;
-    flex: 3;
-    align-items: flex-start;
+    height: 10vh;
+    flex: 2;
     position: relative;
+    padding: 1rem 2rem;
+    background-color: $color__bikelogic-gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    @include m-media(sm) {
+      padding: 2rem vw(4) 2rem 0;
+      height: 100%;
+      padding-left: 40px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
 
     > p {
       margin: 0;
     }
 
-    @include m-media(zr, sm) {
-      flex: 2;
-      padding-left: 20px;
-    }
-
     .service-button {
+      display: none;
       position: absolute;
-      bottom: 0px;
-      right: 0px;
-      margin-left: auto;
+      bottom: 2rem;
+      right: vw(4);
+      /* margin-left: auto; */
       background-color: transparent;
       border: none;
-      color: #3743b2;
+      color: $color__bikelogic-green;
       font-weight: 800;
       padding: 0;
       cursor: pointer;
       text-align: center;
-      right: 0;
+
+      @include m-media(sm) {
+        display: block;
+      }
     }
 
     h3 {
+      font-family: "Nunito Sans", sans-serif;
       margin: 0;
+      line-height: 1;
+
+      @include m-media(sm) {
+        font-size: 1.4rem;
+        font-size: 2.5rem;
+      }
     }
   }
 
   &.left {
+    height: 20vh;
     align-items: center;
-    flex: 1;
     justify-content: center;
+
+    @include m-media(sm) {
+      height: 100%;
+    }
+
+    img {
+      height: 20vh;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
+      @include m-media(sm) {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        height: 100%;
+      }
+    }
   }
 }
 

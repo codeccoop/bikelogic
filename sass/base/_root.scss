@@ -1,5 +1,5 @@
 :root {
-  --content-padding: 15vw;
+  --content-padding: 10vw;
   --header-height: 50px;
 }
 
@@ -12,6 +12,6 @@
 
 @media (min-width: 769px) {
   :root {
-    --content-padding: 10vw;
+    --content-padding: 15vw;
   }
 }
