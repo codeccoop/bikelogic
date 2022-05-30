@@ -45,7 +45,8 @@ $page_ID = get_option('page_on_front');
             </h1>
         <?php endif; ?>
     </section>
-    <section id="services" class="front-page__section" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/images/iso_bl_color_pos.png');">
+    <!-- <section id="services" class="front-page__section" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/images/iso_bl_color_pos.png');"> -->
+    <section id="services" class="front-page__section">
         <?php
         $args = array(
             'post_type' => 'servei',
