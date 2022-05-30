@@ -18,12 +18,26 @@ article.servei {
     justify-content: center;
     color: white;
     background-color: $color__bikelogic-black;
+
+    h1,
+    h2 {
+      margin: 0px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-weight: 400;
+    }
   }
+
   &.left {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2em 1em;
     flex: 1;
     background-color: $color__bikelogic-green;
   }
