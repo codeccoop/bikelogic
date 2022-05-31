@@ -19,8 +19,8 @@
             <?php
             $post_id = get_the_ID(); ?>
             <h1><?php echo get_the_title($post_id); ?></h1>
-            <?php if (get_field('subtitol', $post_id)) : ?>
-                <h2><?php the_field('subtitol', $post_id); ?></h2>
+            <?php if (get_field('page-subtitle', $post_id)) : ?>
+                <h2><?php the_field('page-subtitle', $post_id); ?></h2>
             <?php else : ?>
                 <h2><?php echo get_the_excerpt($post_id); ?></h2>
             <?php endif ?>
@@ -49,17 +49,17 @@
 
     </div><!-- .entry-content -->
     <?php
-    $parallax = get_field('parallax');
-    if ($parallax['boto_parallax']) { ?>
+    $parallax = get_field('page-parallax');
+    if ($parallax['show']) { ?>
         <div class="service-parallax">
             <div class="service-parallax__background">
-                <?php $image_id = $parallax['imatge_parallax'];
+                <?php $image_id = $parallax['image'];
                 $image_src = wp_get_attachment_image_src($image_id, 'full', false)[0];
                 ?>
                 <img src="<?= $image_src ?>" alt="Imatge de fons del parallax">
             </div>
             <div class="service-parallax__overlay">
-                <?php echo $parallax['text_parallax']; ?>
+                <?php echo $parallax['text']; ?>
             </div>
         </div>
     <?php } ?>

@@ -4,6 +4,7 @@
   align-items: stretch;
   background-color: $color__bikelogic-gray;
 }
+
 .service-header__column {
   &.right {
     flex: 2;
@@ -36,6 +37,10 @@
     align-items: center;
     flex: 1;
     background-color: $color__bikelogic-green;
+
+    > img {
+      height: 100%;
+    }
   }
 }
 
@@ -54,10 +59,18 @@
 .service-parallax__overlay {
   padding: 4vh 4vw;
   margin: 4em 0;
-  width: 50%;
+  width: 100%;
   height: auto;
   background-color: white;
   border-radius: 20px;
+
+  @include m-media(sm) {
+    width: 80%;
+  }
+
+  @include m-media(md) {
+    width: 60%;
+  }
 }
 .service-parallax__background {
   position: fixed;
