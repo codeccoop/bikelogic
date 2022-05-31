@@ -1,0 +1,39 @@
+.wp-block-cover {
+  margin: 0 calc(var(--content-padding) * -1) !important;
+  width: vw(100);
+  padding: 0 var(--content-padding);
+  justify-content: flex-start;
+
+  &.aligncenter {
+    justify-content: center;
+  }
+
+  .wp-block-cover__inner-container {
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+
+    @include m-media(sm) {
+      width: 80%;
+    }
+
+    @include m-media(md) {
+      width: 60%;
+    }
+
+    .aligncenter & {
+      margin: 0 auto;
+      clear: both;
+    }
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:fist-child,
+  h5:first-child,
+  p:first-child {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+}
