@@ -50,7 +50,7 @@
     </div><!-- .entry-content -->
     <?php
     $parallax = get_field('page-parallax');
-    if ($parallax['show']) { ?>
+    if ($parallax != null && $parallax['show']) { ?>
         <div class="service-parallax">
             <div class="service-parallax__background">
                 <?php $image_id = $parallax['image'];
