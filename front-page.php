@@ -88,7 +88,7 @@ $page_ID = get_option('page_on_front');
     <section id="intersection" class="front-page__section">
         <div class= "intersection__container">
             <div class="intersection__text">
-                <?php the_field('seccio_intermitja', $page_ID)?>
+                <?php the_field('seccio_intermitja', $page_ID);?>
             </div>
             <img class="intersection__image" src="<?php bloginfo('template_url');?>/assets/images/bikelogic-brand--white.png">
         </div>
