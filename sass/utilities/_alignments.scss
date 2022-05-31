@@ -22,4 +22,8 @@
   @include center-block;
 
   margin-bottom: 1.5em;
+
+  .wp-block-embed__wrapper {
+    display: flex;
+  }
 }
