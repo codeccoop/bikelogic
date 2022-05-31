@@ -1,0 +1,5 @@
+.wp-block-cover {
+  margin: 0 calc(var(--content-padding) * -1) !important;
+  width: vw(100);
+  padding: 0 var(--content-padding);
+}
