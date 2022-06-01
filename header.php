@@ -27,6 +27,18 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <?php if (is_front_page() || is_home()) : ?>
+        <div id="pageLoader">
+            <?php
+            $filepath = get_template_directory() . '/assets/images/marca_bl_negro_pos.svg';
+            if (file_exists($filepath)) {
+                $file = fopen($filepath, "r");
+                echo fread($file, filesize($filepath));
+                fclose($file);
+            }
+            ?>
+        </div>
+    <?php endif; ?>
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'bikelogic'); ?></a>
 
