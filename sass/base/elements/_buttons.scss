@@ -11,6 +11,9 @@ input[type="submit"] {
   line-height: 1;
   padding: 0.6em 2.2em 0.4em;
   cursor: pointer;
+  &.form-serveis-submit {
+    background: $color__bikelogic-green;
+  }
 
   &:hover {
     border-color: $color__border-button-hover;

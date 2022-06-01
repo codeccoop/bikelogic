@@ -14,7 +14,7 @@
 
 <footer id="colophon" class="site-footer">
     <div id="contact">
-        <h1 class="contact__title">Contacte</h2>
+        <h1 class="contact__title">Contacte</h1>
             <div class="site-footer__columns">
                 <?php if (is_front_page()) :?>
                     <div class="site-footer__column left">
