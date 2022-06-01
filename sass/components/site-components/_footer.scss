@@ -3,6 +3,10 @@
 .site-footer {
   background-color: $color__bikelogic-gray;
   padding: 2rem var(--content-padding) 0;
+
+  .fx-relay-email-input-wrapper {
+    z-index: 500;
+  }
 }
 
 .site-footer__columns {

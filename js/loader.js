@@ -6,22 +6,33 @@
     if (!image.complete) {
       promises.push(
         new Promise(function (res, rej) {
-          image.onload = res;
+          image.loadend = res;
         })
       );
     }
   }
 
   if (promises.length) {
-    Promise.all(promises).finally(function (res) {
-      var loader = document.getElementById("pageLoader");
-      loader.classList.add("hidden");
+    Promise.all(promises)
+      .then(res => console.log("Promise.all then: ", res))
+      .catch(err => console.error("Promise.all error: ", err))
+      .finally(hideLoader);
+  } else {
+    hideLoader();
+  }
+
+  setTimeout(hideLoader, 2000);
+
+  function hideLoader(transition) {
+    var loader = document.getElementById("pageLoader");
+    loader.classList.add("hidden");
+
+    if (transition === true) {
       setTimeout(function () {
         loader.parentElement.removeChild(loader);
       }, 600);
-    });
-  } else {
-    var loader = document.getElementById("pageLoader");
-    loader.parentElement.removeChild(loader);
+    } else {
+      loader.parentElement.removeChild(loader);
+    }
   }
 })();
