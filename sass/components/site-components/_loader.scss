@@ -1,0 +1,22 @@
+#pageLoader {
+  position: fixed;
+  z-index: 1000;
+  width: vw(100);
+  height: vh(100);
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  > svg {
+    width: 300px;
+  }
+}
