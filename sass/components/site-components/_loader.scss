@@ -17,6 +17,14 @@
   }
 
   > svg {
-    width: 300px;
+    width: 100px;
+
+    @include m-media(sm) {
+      width: 200px;
+    }
+
+    @include m-media(md) {
+      width: 300px;
+    }
   }
 }

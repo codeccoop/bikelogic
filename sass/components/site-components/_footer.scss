@@ -2,7 +2,7 @@
 
 .site-footer {
   background-color: $color__bikelogic-gray;
-  padding: 1vh var(--content-padding) 0;
+  padding: 2rem var(--content-padding) 0;
 }
 
 .site-footer__columns {
@@ -25,6 +25,27 @@
 
     &:last-child {
       padding-left: vw(3);
+    }
+  }
+
+  &.full {
+    margin-top: 0.83em;
+    display: block;
+
+    @include m-media(md) {
+      display: flex;
+      > div {
+        flex: 1;
+
+        &:first-child {
+          flex: 2;
+          padding-right: vw(3);
+        }
+
+        &:last-child {
+          padding-left: vw(3);
+        }
+      }
     }
   }
 }
@@ -93,19 +114,23 @@ textarea.contact__textarea {
     color: $color__bikelogic-black;
   }
 }
+
 .socialmedia__links {
   list-style: none;
   padding-left: 0px;
   margin-left: 0px;
   margin-top: 2em;
 }
+
 .socialmedia__link {
   padding-left: 1.5rem;
   position: relative;
   float: left;
+
   &:first-child {
     padding-left: 0;
   }
+
   > a {
     display: block;
     width: 20px;
@@ -117,17 +142,18 @@ textarea.contact__textarea {
   }
 }
 
-//footer navigation page//
-
-.site-footer__navigation-page {
+.site-footer__brand {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.site-footer__map-container {
-}
-.site-footer__information {
-  padding-left: 6vw;
+  padding: 4rem 0 2rem;
+
+  > img {
+    width: 100px;
+
+    @include m-media(sm) {
+      width: 200px;
+    }
+  }
 }
 
 .site-info {
