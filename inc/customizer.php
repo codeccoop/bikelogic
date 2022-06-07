@@ -91,12 +91,27 @@ function bikelogic_customize_register($wp_customize)
     $wp_customize->add_setting('whatsapp', array(
         'type' => 'theme_mod',
         'sanitize_callback' => 'sanitize_user',
-        'default' => '34666666'
+        'default' => '600600600'
     ));
     $wp_customize->add_setting('email_address', array(
         'type' => 'theme_mod',
         'sanitize_callback' => 'sanitize_email',
-        'default' => 'info@bikelogic.org'
+        'default' => ''
+    ));
+    $wp_customize->add_setting('facebook_url', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'sanitize_url',
+        'default' => 'https://www.facebook.com/Bikelogic-100231266056926'
+    ));
+    $wp_customize->add_setting('instagram_url', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'sanitize_url',
+        'default' => 'https://www.instagram.com/accounts/edit/'
+    ));
+    $wp_customize->add_setting('linkedin_url', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'sanitize_url',
+        'default' => 'https://www.linkedin.com/feed/'
     ));
 
     $wp_customize->add_control('legal_name', array(
@@ -132,6 +147,27 @@ function bikelogic_customize_register($wp_customize)
         'priority' => 30,
         'label' => 'Correu electrònic',
         'description' => 'Correu electrònic de la cooperativa',
+        'section' => 'contact'
+    ));
+    $wp_customize->add_control('facebook_url', array(
+        'type' => 'text',
+        'priority' => 40,
+        'label' => 'Facebook',
+        'description' => 'Enllaç al perfil de Facebook de Bikelogic',
+        'section' => 'contact'
+    ));
+    $wp_customize->add_control('instagram_url', array(
+        'type' => 'text',
+        'priority' => 50,
+        'label' => 'Instagram',
+        'description' => 'Enllaç al perfil d\'Instagram de Bikelogic',
+        'section' => 'contact'
+    ));
+    $wp_customize->add_control('linkedin_url', array(
+        'type' => 'text',
+        'priority' => 60,
+        'label' => 'Linkedin',
+        'description' => 'Enllaç al perfil de Linkedin de Bikelogic',
         'section' => 'contact'
     ));
 

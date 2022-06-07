@@ -86,11 +86,11 @@ $page_ID = get_option('page_on_front');
 
     </section>
     <section id="intersection" class="front-page__section">
-        <div class= "intersection__container">
+        <div class="intersection__container">
             <div class="intersection__text">
-                <?php the_field('seccio_intermitja', $page_ID);?>
+                <?php the_field('seccio_intermitja', $page_ID); ?>
             </div>
-            <img class="intersection__image" src="<?php bloginfo('template_url');?>/assets/images/bikelogic-brand--white.png">
+            <img class="intersection__image" src="<?php bloginfo('template_url'); ?>/assets/images/bikelogic-brand--white.png">
         </div>
 
     </section>
@@ -108,29 +108,25 @@ $page_ID = get_option('page_on_front');
         <div class="front-page__parallax-overlay">
             <?php if (get_field('projecte', $page_ID)) : ?>
                 <div class="parallax-overlay__text"><?php the_field('projecte', $page_ID); ?></div>
-            <?php endif; ?>
-            <div class="parallax-overlay__items-container">
-                <div class="items-container valor1">
-                    <?php
-                    $missiovalors = get_field('missio_i_valors', $page_ID);
-                    $image1_data = wp_get_attachment_image_src($missiovalors['icona_valor_1'], 'full', false); ?>
-                    <img src="<?php echo $image1_data[0]; ?>">
-                    <div><?php echo $missiovalors['valor1'] ?></div>
-                </div>
-                <div class="items-container valor2">
-                    <?php
-                    $missiovalors = get_field('missio_i_valors', $page_ID);
-                    $image1_data = wp_get_attachment_image_src($missiovalors['icona_valor_2'], 'full', false); ?>
-                    <img src="<?php echo $image1_data[0]; ?>">
-                    <div><?php echo $missiovalors['valor2'] ?></div>
-                </div>
-                <div class="items-container valor3">
-                    <?php
-                    $missiovalors = get_field('missio_i_valors', $page_ID);
-                    $image1_data = wp_get_attachment_image_src($missiovalors['icona_valor_3'], 'full', false); ?>
-                    <img src="<?php echo $image1_data[0]; ?>">
-                    <div><?php echo $missiovalors['valor3'] ?></div>
-                </div>
+            <?php endif;
+            $missioivalors = get_field('missio_i_valors', $page_ID);
+            $objectiu_1 = $missioivalors['objectiu_1'];
+            $objectiu_2 = $missioivalors['objectiu_2'];
+            $objectiu_3 = $missioivalors['objectiu_3'];
+            ?>
+            <div class="parallax-overlay__items">
+                <figure class="parallax-overlay__item">
+                    <img src="<?= wp_get_attachment_image_src($objectiu_1['image'], 'medium', false)[0]; ?>">
+                    <figcaption><?= $objectiu_1['description'] ?></figcaption>
+                </figure>
+                <figure class="parallax-overlay__item valor2">
+                    <img src="<?= wp_get_attachment_image_src($objectiu_2['image'], 'medium', false)[0]; ?>">
+                    <figcaption><?php echo $objectiu_2['description'] ?></figcaption>
+                </figure>
+                <figure class="parallax-overlay__item valor3">
+                    <img src="<?= wp_get_attachment_image_src($objectiu_3['image'], 'medium', false)[0]; ?>">
+                    <figcaption><?php echo $objectiu_3['description'] ?></figcaption>
+                </figure>
             </div>
             <button><a href="<?= get_page_link(get_page_by_title('El projecte')->ID); ?>">Coneix-nos</a></button>
         </div>

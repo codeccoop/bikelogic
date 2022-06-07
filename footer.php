@@ -19,7 +19,7 @@
             <?php if (is_front_page()) : ?>
                 <div class="site-footer__column left">
                     <h2 class="contact__section-title">Vols contractar els nostres servèis?</h3>
-                        <?= do_shortcode('[contact-form-7 id="21" title="Contact form 1"]'); ?>
+                        <?= do_shortcode('[contact-form-7 id="21" title="Contact form 1" html_class="site-footer__contact-form"]'); ?>
                 </div>
             <?php endif; ?>
             <div class="site-footer__column <?= is_front_page() ? 'right' : 'full'; ?>">
@@ -45,16 +45,16 @@
                     </ul>
                     <ul class="socialmedia__links">
                         <li class="socialmedia__link">
-                            <a href="#" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/instagram.png" alt="instagram"></a>
+                            <a href="<?= get_theme_mod('instagram_url'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/instagram.png" alt="instagram"></a>
+                        </li>
+                        <!-- <li class="socialmedia__link">
+                            <a href="" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/twitter.png" alt="twitter"></a>
+                        </li> -->
+                        <li class="socialmedia__link">
+                            <a href="<?= get_theme_mod('facebook_url'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/facebook.png" alt="facebook"></a>
                         </li>
                         <li class="socialmedia__link">
-                            <a href="#" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/twitter.png" alt="twitter"></a>
-                        </li>
-                        <li class="socialmedia__link">
-                            <a href="#" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/facebook.png" alt="facebook"></a>
-                        </li>
-                        <li class="socialmedia__link">
-                            <a href="#" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/linkedin.png" alt="linkedin"></a>
+                            <a href="<?= get_theme_mod('linkedin_url'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/icons/linkedin.png" alt="linkedin"></a>
                         </li>
                     </ul>
                 </div>
