@@ -363,5 +363,18 @@
 
   figcaption {
     text-align: center;
+    padding: 0 2rem;
+
+    @include m-media(sm) {
+      padding: 0 0.5rem;
+    }
+
+    @include m-media(md) {
+      padding: 0 1rem;
+    }
+
+    @include m-media(lg) {
+      padding: 0 2rem;
+    }
   }
 }
