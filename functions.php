@@ -201,7 +201,7 @@ if (class_exists('WooCommerce')) {
  */
 
 require get_template_directory() . '/post_types/service.php';
-require get_template_directory() . '/post_types/valors.php';
+# require get_template_directory() . '/post_types/valors.php';
 require get_template_directory() . '/post_types/contact.php';
 
 /**

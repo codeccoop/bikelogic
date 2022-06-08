@@ -50,7 +50,9 @@ $page_ID = get_option('page_on_front');
         <?php
         $args = array(
             'post_type' => 'servei',
-            'posts_per_page' => -1
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'asc'
         );
         $query = new WP_Query($args);
         if ($query->have_posts()) : ?>
