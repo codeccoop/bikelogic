@@ -8,7 +8,7 @@
 .service-header__column {
   &.right {
     flex: 2;
-    padding-left: 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -17,11 +17,11 @@
     background-color: $color__bikelogic-black;
 
     @include m-media(sm) {
-      padding-left: 2rem;
+      padding: 0 2rem;
     }
 
     @include m-media(md) {
-      padding-left: 4rem;
+      padding: 0 4rem;
     }
 
     h1,
@@ -37,7 +37,7 @@
         font-size: 2rem;
       }
 
-      @include m-media(md) {
+      @include m-media(lg) {
         font-size: 2.5rem;
       }
     }
@@ -50,7 +50,7 @@
         font-size: 1.2rem;
       }
 
-      @include m-media(md) {
+      @include m-media(lg) {
         font-size: 1.8rem;
       }
     }
