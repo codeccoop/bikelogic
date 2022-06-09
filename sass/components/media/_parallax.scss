@@ -8,6 +8,14 @@
     justify-content: center;
   }
 
+  &.bl-non-wrapping {
+    .wp-block-cover__inner-container {
+      background-color: transparent;
+      padding: unset;
+      width: 100%;
+    }
+  }
+
   .wp-block-cover__inner-container {
     background-color: #fffffff6;
     border-radius: 10px;
