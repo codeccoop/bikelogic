@@ -1,5 +1,14 @@
+/* Variables
+---------------------------------------- */
 @import "variables/colors";
 @import "variables/typography";
 @import "variables/structure";
 @import "variables/columns";
+@import "variables/layout";
+@import "variables/root";
+
+/* Mixins
+---------------------------------------- */
 @import "mixins/mixins";
+@import "mixins/breakpoints";
+@import "mixins/viewport";

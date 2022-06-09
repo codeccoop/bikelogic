@@ -6,30 +6,24 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     left: vw(-100);
-    top: $mobile-header-height;
+    top: var(--header-height);
     transition: left 500ms ease-out;
     width: vw(100);
-    height: calc(#{vh(100)} - #{$mobile-header-height});
+    height: calc(#{vh(100)} - var(--header-height));
     background-color: white;
     box-shadow: inset 0px 5px 5px -5px #0003;
 
     .admin-bar & {
-      height: calc(#{vh(100)} - calc(#{$mobile-header-height} + 46px));
-
-      @include m-media(sm) {
-        height: calc(#{vh(100)} - calc(#{$header-height} + 32px));
-      }
+      top: calc(var(--header-height) + var(--wp-admin--admin-bar--height));
+      height: calc(
+        #{vh(100)} - calc(var(--header-height) + var(--wp-admin--admin-bar--height))
+      );
 
       @include m-media(md) {
-        height: $header-height;
+        height: var(--header-height);
       }
-    }
-
-    @include m-media(sm) {
-      top: $header-height;
-      height: calc(#{vh(100)} - #{$header-height});
     }
 
     @include m-media(md) {

@@ -17,11 +17,11 @@
     background-color: $color__bikelogic-black;
 
     @include m-media(sm) {
-      padding: 0 2rem;
+      padding: 0 2rem 0 1.5rem;
     }
 
     @include m-media(md) {
-      padding: 0 4rem;
+      padding: 0 4rem 0 2rem;
     }
 
     h1,

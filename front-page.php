@@ -16,6 +16,7 @@ $page_ID = get_option('page_on_front');
 
 <main class="front-page">
     <section id="cover" class="front-page__section">
+        <a class="top-anchor"></a>
         <?php
         $image_id = get_theme_mod('jumbotron');
         $image_data = null;
@@ -46,7 +47,9 @@ $page_ID = get_option('page_on_front');
         <?php endif; ?>
     </section>
     <!-- <section id="services" class="front-page__section" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/images/iso_bl_color_pos.png');"> -->
+    <a name="services-anchor" class="top-anchored"></a>
     <section id="services" class="front-page__section">
+        <a class="top-anchor"></a>
         <?php
         $args = array(
             'post_type' => 'servei',
@@ -87,6 +90,7 @@ $page_ID = get_option('page_on_front');
         <?php endif; ?>
 
     </section>
+    <a class="top-anchored" name="intersection-anchor"></a>
     <section id="intersection" class="front-page__section">
         <div class="intersection__container">
             <div class="intersection__text">
@@ -96,6 +100,7 @@ $page_ID = get_option('page_on_front');
         </div>
 
     </section>
+    <a class="top-anchored" name="project-anchor"></a>
     <section id="project" class="front-page__section parallax-window">
         <div class="front-page__parallax-background">
             <?php

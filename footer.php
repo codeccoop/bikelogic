@@ -13,6 +13,7 @@
 ?>
 
 <footer id="colophon" class="site-footer">
+    <a class="top-anchored" name="contact-anchor"></a>
     <div id="contact">
         <!-- <h1 class="contact__title">Contacte</h2> -->
         <div class="site-footer__columns">

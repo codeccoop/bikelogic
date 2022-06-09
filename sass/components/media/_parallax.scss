@@ -1,7 +1,7 @@
 .wp-block-cover {
-  margin: 0 calc(var(--content-padding) * -1) !important;
+  margin: 4rem calc(var(--content-padding) * -1) !important;
   width: vw(100);
-  padding: 0 var(--content-padding);
+  padding: 75px var(--content-padding);
   justify-content: flex-start;
 
   &.aligncenter {
@@ -12,6 +12,7 @@
     background-color: #fffffff6;
     border-radius: 10px;
     width: 100%;
+    padding: 2vw 4vw;
 
     @include m-media(sm) {
       width: 80%;

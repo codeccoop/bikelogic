@@ -3,6 +3,28 @@ Theme Name: bikelogic
 
 WooCommerce styles override
 */
+/* Variables
+---------------------------------------- */
+:root {
+	--content-padding: 10vw;
+	--header-height: 50px;
+}
+
+@media (min-width: 640px) {
+	:root {
+		--content-padding: 12vw;
+		--header-height: 75px;
+	}
+}
+
+@media (min-width: 769px) {
+	:root {
+		--content-padding: 15vw;
+	}
+}
+
+/* Mixins
+---------------------------------------- */
 /**
  * Shop tables
  */
