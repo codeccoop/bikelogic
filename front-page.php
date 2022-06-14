@@ -23,7 +23,6 @@ $page_ID = get_option('page_on_front');
         if ($image_id) {
             $image_data = wp_get_attachment_image_src($image_id, 'full', false);
         }
-
         if ($image_data) : ?>
             <img class="front-page__cover-image" src="<?php echo $image_data[0]; ?>" alt="Imatge de la portada">
         <?php else : ?>

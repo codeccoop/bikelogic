@@ -45,6 +45,16 @@ function bikelogic_customize_register($wp_customize)
         'sanitize_callback' => 'bl_sanitize_image_attachment',
         'default' => ''
     ));
+    $wp_customize->add_setting('carroussel1', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'bl_sanitize_image_attachment',
+        'default' => ''
+    ));
+    $wp_customize->add_setting('carroussel2', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'bl_sanitize_image_attachment',
+        'default' => ''
+    ));
 
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
@@ -67,7 +77,36 @@ function bikelogic_customize_register($wp_customize)
                 'label' => 'Imàtge de la portada',
                 'settings' => 'jumbotron',
                 'section' => 'title_tagline',
-                'priority' => 55
+                'priority' => 55,
+                'description' => 'Imatge que apareixerà a la portada'
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'my_front_page_carroussel1',
+            array(
+                'label' => 'Imatge de carroussel 1',
+                'settings' => 'carroussel1',
+                'section' => 'title_tagline',
+                'priority' => 57,
+                'description' => 'Si afegeixes aquesta imatge, apareixerà a continuació de la
+                imatge principal, creant un carroussel'
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'my_front_page_carroussel2',
+            array(
+                'label' => 'Imatge de carroussel 2',
+                'settings' => 'carroussel2',
+                'section' => 'title_tagline',
+                'priority' => 57,
+                'description' => 'Si afegeixes aquesta imatge, apareixerà a continuació de la
+                imatge principal, creant un carroussel'
             )
         )
     );
