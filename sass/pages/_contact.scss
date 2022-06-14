@@ -24,28 +24,22 @@
   display: block;
   background-color: white;
   padding: 0 var(--content-padding) 4rem;
-}
 
-.contact__contact-form {
-  form {
-    margin: auto;
-    clear: both;
-    width: fit-content;
-  }
+  .wpcf7-form {
+    .your-consent .wpcf7-list-item {
+      margin: 0px;
+    }
 
-  p {
-    margin-bottom: 1.2em;
-  }
+    p {
+      margin-bottom: 1.2em;
+    }
 
-  textarea {
-    resize: none;
-  }
+    textarea {
+      resize: none;
+    }
 
-  input[type="submit"] {
-    margin-top: 0.9rem;
-  }
-
-  .your-consent .wpcf7-list-item {
-    margin: 0px;
+    input[type="submit"] {
+      margin-top: 0.9rem;
+    }
   }
 }
