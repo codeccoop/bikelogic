@@ -1,12 +1,10 @@
 .contact-header {
   padding: 4vh var(--content-padding);
   display: flex;
-  justify-content: flex-start;
-  background-color: $color__bikelogic-black;
+  justify-content: center;
 }
 
 .contact-header__column {
-  color: white;
   h1,
   h2 {
     margin: 0px;
@@ -25,32 +23,29 @@
 .contact-content {
   display: block;
   background-color: white;
-  padding: 4rem var(--content-padding);
+  padding: 0 var(--content-padding) 4rem;
 }
-form {
-  margin: auto;
-  clear: both;
-  width: fit-content;
-}
-p {
-  margin-bottom: 1.2em;
-}
-.form-serveis-selector {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 0.4em 1em 0.4em;
-  color: white;
-  background-color: $color__bikelogic-green;
-  font-weight: 800;
-  margin: 0.4em 0em;
-}
-.form-serveis-entry {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-textarea {
-  resize: none;
-}
-label {
-  font-weight: 800;
+
+.contact__contact-form {
+  form {
+    margin: auto;
+    clear: both;
+    width: fit-content;
+  }
+
+  p {
+    margin-bottom: 1.2em;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input[type="submit"] {
+    margin-top: 0.9rem;
+  }
+
+  .your-consent .wpcf7-list-item {
+    margin: 0px;
+  }
 }
