@@ -9,7 +9,13 @@
  *
  * @package bikelogic
  */
+if (!wp_script_is('slick-js')) {
+    wp_enqueue_script('slick-js');
+}
 
+if (!wp_script_is('slick-css')) {
+    wp_enqueue_style('slick-css');
+}
 get_header();
 $page_ID = get_option('page_on_front');
 ?>
@@ -19,15 +25,37 @@ $page_ID = get_option('page_on_front');
         <a class="top-anchor"></a>
         <?php
         $image_id = get_theme_mod('jumbotron');
+        $image_carroussel1 = get_theme_mod('carroussel1');
+        $image_carroussel2 = get_theme_mod('carroussel2');
+        $carroussel1_data = null;
+        $carroussel2_data = null;
         $image_data = null;
-        if ($image_id) {
-            $image_data = wp_get_attachment_image_src($image_id, 'full', false);
-        }
-        if ($image_data) : ?>
-            <img class="front-page__cover-image" src="<?php echo $image_data[0]; ?>" alt="Imatge de la portada">
-        <?php else : ?>
+        if ($image_id || $image_id && $image_carroussel1 || $image_id && $image_carroussel1 || $image_id && $image_carroussel1 && $image_carroussel2) {?>
+            <div class="carroussel-container">
+                <?php if ($image_id){
+                    $image_data = wp_get_attachment_image_src($image_id, 'full', false);
+                }
+                if ($image_data){ ?>
+                    <div><img class="front-page__cover-image" src="<?php echo $image_data[0]; ?>" alt="Imatge del carroussel"></div>
+                <?php }
+                if ($image_carroussel1){
+                $carroussel1_data = wp_get_attachment_image_src($image_carroussel1, 'full', false);
+                }
+                if ($carroussel1_data){ ?>
+                    <div><img class="carroussel-image" src="<?php echo $carroussel1_data[0]; ?>" alt="Imatge del carroussel"></div>
+                <?php }
+                if($image_carroussel2){
+                    $carroussel2_data = wp_get_attachment_image_src($image_carroussel2, 'full', false);
+                }
+                if($carroussel2_data){ ?>
+                    <div><img class="carroussel-image" src="<?php echo $carroussel2_data[0]; ?>" alt="Imatge del carroussel"></div>
+                <?php }?>    
+            
+            </div>
+        <?php }
+        else { ?>
             <img class="front-page__cover-image" src="<?= get_bloginfo('template_url'); ?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
-        <?php endif;
+        <?php }
         $site_description = get_bloginfo('description', 'display');
         $site_name = get_bloginfo('name');
         if (display_header_text() && (is_home() || is_front_page())) : ?>
