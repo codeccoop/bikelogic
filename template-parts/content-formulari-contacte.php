@@ -13,16 +13,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="contact-header">
         <div class="contact-header__column">
-            <?php
-            $post_id = get_the_ID(); ?>
-            <h1><?php echo get_the_title($post_id); ?></h1>
-            <?php if (get_field('page-subtitle', $post_id)) : ?>
-                <h2><?php the_field('page-subtitle', $post_id); ?></h2>
-            <?php else : ?>
-                <h2><?php echo get_the_excerpt($post_id); ?></h2>
-            <?php endif ?>
+            <h1>Formulari de contacte</h1>
         </div>
-
     </header><!-- .entry-header -->
 
     <div class="contact-content">

@@ -3,10 +3,6 @@
 .site-footer {
   background-color: $color__bikelogic-gray;
   padding: 2rem var(--content-padding) 0;
-
-  .fx-relay-email-input-wrapper {
-    z-index: 500;
-  }
 }
 
 .site-footer__columns {
@@ -53,13 +49,21 @@
 .site-footer__contact-form {
   width: 100%;
 
+  .your-consent .wpcf7-list-item {
+    margin: 0px;
+  }
+
   input[type="submit"] {
     margin-top: 0.9rem;
   }
+
+  .fx-relay-email-input-wrapper {
+    z-index: 500;
+  }
 }
 
-input.contact__input,
-textarea.contact__textarea {
+input.bl-contact-form__input,
+textarea.bl-contact-form__textarea {
   outline: none;
   border-radius: 5px;
   width: 100%;
