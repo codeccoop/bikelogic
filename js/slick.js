@@ -1,3 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  jQuery(".carroussel-container").slick();
+  jQuery(".carroussel-content").slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    //adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+
+    // centerMode: true,
+    // variableWidth: true,
+  });
 });

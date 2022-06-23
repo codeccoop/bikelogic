@@ -32,25 +32,26 @@ $page_ID = get_option('page_on_front');
         $image_data = null;
         if ($image_id || $image_id && $image_carroussel1 || $image_id && $image_carroussel1 || $image_id && $image_carroussel1 && $image_carroussel2) {?>
             <div class="carroussel-container">
-                <?php if ($image_id){
-                    $image_data = wp_get_attachment_image_src($image_id, 'full', false);
-                }
-                if ($image_data){ ?>
-                    <div><img class="front-page__cover-image" src="<?php echo $image_data[0]; ?>" alt="Imatge del carroussel"></div>
-                <?php }
-                if ($image_carroussel1){
-                $carroussel1_data = wp_get_attachment_image_src($image_carroussel1, 'full', false);
-                }
-                if ($carroussel1_data){ ?>
-                    <div><img class="carroussel-image" src="<?php echo $carroussel1_data[0]; ?>" alt="Imatge del carroussel"></div>
-                <?php }
-                if($image_carroussel2){
-                    $carroussel2_data = wp_get_attachment_image_src($image_carroussel2, 'full', false);
-                }
-                if($carroussel2_data){ ?>
-                    <div><img class="carroussel-image" src="<?php echo $carroussel2_data[0]; ?>" alt="Imatge del carroussel"></div>
-                <?php }?>    
-            
+                <div class="carroussel-content">
+                    <?php if ($image_id){
+                        $image_data = wp_get_attachment_image_src($image_id, 'full', false);
+                    }
+                    if ($image_data){ ?>
+                        <div><img class="carroussel-image" src="<?php echo $image_data[0]; ?>" alt="Imatge del carroussel"></div>
+                    <?php }
+                    if ($image_carroussel1){
+                    $carroussel1_data = wp_get_attachment_image_src($image_carroussel1, 'full', false);
+                    }
+                    if ($carroussel1_data){ ?>
+                        <div><img class="carroussel-image" src="<?php echo $carroussel1_data[0]; ?>" alt="Imatge del carroussel"></div>
+                    <?php }
+                    if($image_carroussel2){
+                        $carroussel2_data = wp_get_attachment_image_src($image_carroussel2, 'full', false);
+                    }
+                    if($carroussel2_data){ ?>
+                        <div><img class="carroussel-image" src="<?php echo $carroussel2_data[0]; ?>" alt="Imatge del carroussel"></div>
+                    <?php }?>    
+                </div>
             </div>
         <?php }
         else { ?>
