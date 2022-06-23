@@ -30,7 +30,7 @@ $page_ID = get_option('page_on_front');
         $carroussel1_data = null;
         $carroussel2_data = null;
         $image_data = null;
-        if ($image_id || $image_id && $image_carroussel1 || $image_id && $image_carroussel1 || $image_id && $image_carroussel1 && $image_carroussel2) {?>
+        if ($image_id || $image_id && $image_carroussel1 || $image_id && $image_carroussel2 || $image_id && $image_carroussel1 && $image_carroussel2) {?>
             <div class="carroussel-container">
                 <div class="carroussel-content">
                     <?php if ($image_id){
@@ -120,11 +120,14 @@ $page_ID = get_option('page_on_front');
     </section>
     <a class="top-anchored" name="intersection-anchor"></a>
     <section id="intersection" class="front-page__section">
+        <?php $intersection_group = get_field('seccio_intermitja', $page_ID);
+            $intersection_text = $intersection_group['text'];
+            $intersection_logo = $intersection_group['logo']; ?>
         <div class="intersection__container">
             <div class="intersection__text">
-                <?php the_field('seccio_intermitja', $page_ID); ?>
+                <?= $intersection_text; ?>
             </div>
-            <img class="intersection__image" src="<?php bloginfo('template_url'); ?>/assets/images/bikelogic-brand--white.png">
+            <img class="intersection__image" src="<?= wp_get_attachment_image_src($intersection_logo, 'medium', false)[0];?>">
         </div>
 
     </section>
