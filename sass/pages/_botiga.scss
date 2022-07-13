@@ -1,0 +1,29 @@
+.bl-cataleg-botiga .bl-cataleg-item {
+  margin: 3rem 0;
+
+  &:first-child {
+    margin-top: 4rem;
+  }
+
+  @include m-media(zr, md) {
+    h3.has-large-font-size {
+      margin-top: 1rem;
+    }
+
+    h3.has-text-align-right,
+    p.has-text-align-right {
+      text-align: left;
+    }
+    .wp-block-buttons {
+      justify-content: flex-start;
+    }
+  }
+
+  @include m-media(md) {
+    margin: 1rem 0;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+}

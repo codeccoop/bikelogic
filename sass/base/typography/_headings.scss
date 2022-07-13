@@ -6,3 +6,14 @@ h5,
 h6 {
   clear: both;
 }
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    clear: both;
+
+    + .subtitle {
+      opacity: 0.8;
+      margin-top: -1 * (2 - ($i / 6)) + em;
+    }
+  }
+}
