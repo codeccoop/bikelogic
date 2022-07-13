@@ -166,7 +166,7 @@ $page_ID = get_option('page_on_front');
                     <figcaption><?php echo $objectiu_3['description'] ?></figcaption>
                 </figure>
             </div>
-            <button><a href="<?= get_page_link(get_page_by_title('El projecte')->ID); ?>">Coneix-nos</a></button>
+            <button><a href="<?= get_page_link(get_page_by_title('Som Bikelogic')->ID); ?>">Coneix-nos</a></button>
         </div>
     </section>
 </main>
