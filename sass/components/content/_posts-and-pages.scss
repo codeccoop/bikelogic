@@ -38,24 +38,39 @@ body.single {
     background-color: #fffffff6;
     border-radius: 10px;
     width: 100%;
-    padding: 2vw 4vw;
+    padding: 4vh 6vw;
+    margin: 2em 0;
 
     @include m-media(sm) {
       width: 80%;
+      padding: 4vh 4vw;
     }
 
     @include m-media(md) {
       width: 60%;
+      padding: 3vw 4vw;
     }
 
-    h1:first-child,
-    h2:first-child,
-    h3:first-child,
-    h4:fist-child,
-    h5:first-child,
-    p:first-child {
-      margin-top: 0px;
-      padding-top: 0px;
+    @for $i from 1 through 5 {
+      h#{$i}:first-child {
+        margin-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      h#{$i}:last-child {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+      }
+
+      p:first-child {
+        margin-top: 0px;
+        padding-top: 0px;
+      }
+
+      p:last-child {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+      }
     }
   }
 }
