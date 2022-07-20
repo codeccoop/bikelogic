@@ -18,7 +18,8 @@
     .admin-bar & {
       top: calc(var(--header-height) + var(--wp-admin--admin-bar--height));
       height: calc(
-        #{vh(100)} - calc(var(--header-height) + var(--wp-admin--admin-bar--height))
+        #{vh(100)} - calc(var(--header-height) +
+              var(--wp-admin--admin-bar--height))
       );
 
       @include m-media(md) {
@@ -46,6 +47,7 @@
 
       &.right {
         margin-bottom: calc(calc(#{vh(100)} - 100vh) + 2rem);
+        display: none;
       }
     }
 
@@ -184,7 +186,26 @@
   display: block;
   position: initial;
 }
+.whatsapp-button-toggle {
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  right: calc(var(--content-padding) + 45px);
+  top: 50%;
+  transform: translate(0, -48%);
+  @include m-media(sm) {
+    right: calc(var(--content-padding) + 55px);
+  }
+  a {
+    height: 25px;
+  }
+}
 
+.whatsapp-button-toggle,
 .menu-toggle {
   @include m-media(md) {
     display: none;
@@ -217,12 +238,10 @@
     flex: 1 0 50%;
   }
 }
-
 .menu-toggle {
   background-color: transparent;
   border: none;
   outline: none;
-  position: relative;
   width: 30px;
   height: 30px;
   padding: 0px;

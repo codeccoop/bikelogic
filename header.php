@@ -30,7 +30,7 @@
     <?php if (is_front_page() || is_home()) : ?>
         <div id="pageLoader">
             <?php
-            $filepath = get_template_directory() . '/assets/images/marca_bl_negro_pos.svg';
+            $filepath = get_template_directory() . '/assets/images/marca_bl_color_pos.svg';
             if (file_exists($filepath)) {
                 $file = fopen($filepath, "r");
                 echo fread($file, filesize($filepath));
@@ -71,13 +71,16 @@
                                 <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
                                     <a href="https://wa.me/<?= get_theme_mod('whatsapp'); ?>"></a>
                                 </li>
-                                <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
+                                <?php /* <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
                                     <a href="mailto:<?= get_theme_mod('email_address'); ?>"></a>
-                                </li>
+                                </li> */ ?>
                             </ul>
                         </div><!-- #menu-social-menu -->
                     </div>
                 </div><!-- main-navigation__columns -->
+                <div class="whatsapp-button-toggle" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
+                    <a href="https://wa.me/<?= get_theme_mod('whatsapp'); ?>"></a>
+                </div>
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                     <span class="burger"></span>
                 </button>
