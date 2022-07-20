@@ -234,7 +234,9 @@
     @include m-media(lg) {
       padding: 1rem 2rem;
     }
-
+    @media screen and (max-width: 966px) and (max-height: 700px) {
+      display: flex;
+    }
     > p {
       margin: 0;
       line-height: 1.2;
@@ -247,6 +249,12 @@
 
       @include m-media(md) {
         line-height: 1.4;
+      }
+      @media screen and (max-width: 966px) and (max-height: 700px) {
+        display: none;
+      }
+      @media screen and (min-width: 980px) and (max-width: 1020px) and (max-height: 700px) {
+        line-height: 1.2;
       }
     }
 
