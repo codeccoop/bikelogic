@@ -8,6 +8,20 @@
  * @package bikelogic
  */
 
+function add_blank_to_links()
+{
+    echo '<script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            Array.apply(null, document.getElementsByClassName("bl-youtube-link"))
+                .forEach(function (link) {
+                    link.getElementsByTagName("a")[0]
+                        .setAttribute("target", "_blank");
+                });
+        });
+    </script>';
+}
+
+add_action('wp_footer', 'add_blank_to_links');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
