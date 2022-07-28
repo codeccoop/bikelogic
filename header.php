@@ -68,7 +68,7 @@
                     <div class="main-navigation__column right">
                         <div class="menu-social-menu-container">
                             <ul id="menu-social-menu" class="menu">
-                                <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
+                                <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp-verd.png')">
                                     <a href="https://wa.me/<?= get_theme_mod('whatsapp'); ?>"></a>
                                 </li>
                                 <?php /* <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
@@ -78,7 +78,7 @@
                         </div><!-- #menu-social-menu -->
                     </div>
                 </div><!-- main-navigation__columns -->
-                <div class="whatsapp-button-toggle" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
+                <div class="whatsapp-button-toggle" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp-verd.png')">
                     <a href="https://wa.me/<?= get_theme_mod('whatsapp'); ?>"></a>
                 </div>
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">

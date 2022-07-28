@@ -89,6 +89,12 @@
     &.left {
       flex: 1;
     }
+    &.right {
+      a {
+        width: 25px;
+        height: 25px;
+      }
+    }
   }
 
   ul {
@@ -189,7 +195,7 @@
 .whatsapp-button-toggle {
   display: block;
   position: absolute;
-  width: 25px;
+  width: 30px;
   height: 25px;
   background-size: contain;
   background-position: center;
@@ -197,9 +203,6 @@
   right: calc(var(--content-padding) + 45px);
   top: 50%;
   transform: translate(0, -48%);
-  @include m-media(sm) {
-    right: calc(var(--content-padding) + 55px);
-  }
   a {
     height: 25px;
   }

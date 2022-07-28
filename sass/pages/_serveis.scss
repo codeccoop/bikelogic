@@ -116,3 +116,17 @@
     object-fit: cover;
   }
 }
+
+//custom classes
+
+.bl_custom_link {
+  a:hover {
+    color: $color__bikelogic-black;
+  }
+  a:link {
+    color: $color__bikelogic-black;
+  }
+  a:visited {
+    color: $color__bikelogic-black;
+  }
+}
