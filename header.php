@@ -68,12 +68,12 @@
                     <div class="main-navigation__column right">
                         <div class="menu-social-menu-container">
                             <ul id="menu-social-menu" class="menu">
-                                <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp-verd.png')">
+                                <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
                                     <a href="https://wa.me/<?= get_theme_mod('whatsapp'); ?>"></a>
                                 </li>
-                                <?php /* <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
+                                <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
                                     <a href="mailto:<?= get_theme_mod('email_address'); ?>"></a>
-                                </li> */ ?>
+                                </li>
                             </ul>
                         </div><!-- #menu-social-menu -->
                     </div>

@@ -65,11 +65,14 @@ $page_ID = get_option('page_on_front');
                 $brand_image_id = get_theme_mod('front_page_logo');
                 if ($brand_image_id) {
                     $brand_image_url = wp_get_attachment_image_src($brand_image_id, 'full', false)[0];
-                } else {
-                    $brand_image_url = get_bloginfo('template_url') . '/assets/images/bikelogic-brand--white.png';
-                }
                 ?>
                 <img src="<?= $brand_image_url; ?>" />
+                <?php } else {
+                    //   $brand_image_url = get_bloginfo('template_url') . '/assets/images/bikelogic-brand--white.png'; -->
+                    //   <img src="" />
+                }
+                ?>
+                
                 <?= $site_description; ?>
             </h1>
         <?php endif; ?>
