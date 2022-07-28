@@ -66,7 +66,7 @@
         </div>
         <div class="site-footer__logos">
             <div class="site-footer__collaborations">
-                <h3>Amb el suport de:</h3>
+                <h3>Amb el suport de</h3>
                 <div class="collaborations__logos">
                     <a href="https://www.barcelonactiva.cat/" target="_blank" ><img src="<?= get_template_directory_uri() .'/assets/images/logo-vector-barcelona-activa.png'; ?>" alt="Logo Barcelona Activa"/></a>
                     <a href="https://www.mercantic.com/en/" target="_blank"><img src="<?= get_template_directory_uri() .'/assets/images/mercantic.png';?>" alt="Logo mercantic"/></a>
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="site-footer__collaborations">
-                <h3>Partners:</h3>
+                <h3>Partners</h3>
                 <div class="collaborations__logos">
                     <a href="https://triobike.com/en/" target="_blank" ><img src="<?= get_template_directory_uri() .'/assets/images/triobike.png'; ?>" alt="Logo Barcelona Activa"/></a>
                     <a href="https://www.fleximodal.fr/" target="_blank"><img src="<?= get_template_directory_uri() .'/assets/images/FlexiModal.jpg';?>" alt="Logo mercantic"/></a>
