@@ -149,6 +149,22 @@ body.single {
   }
 }
 
+@for $i from 1 through 10 {
+  .bl-radius-#{$i} {
+    border-radius: $i + px;
+  }
+}
+
+@for $x from 0 through 10 {
+  @for $y from 0 through 10 {
+    @for $s from 0 through 10 {
+      .bl-shadow-#{$x}-#{$y}-#{$s} {
+        box-shadow: $x + px $y + px $s + px #0003;
+      }
+    }
+  }
+}
+
 $colors: green, gray, black, white;
 $hex: #6f9984, #f2f2f2, #333333, #ffffff;
 

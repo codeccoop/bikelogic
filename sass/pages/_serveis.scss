@@ -64,7 +64,7 @@
     background-color: $color__bikelogic-green;
 
     @include m-media(md) {
-      flex: 1;
+      flex: 0.75;
     }
 
     > img {
@@ -78,7 +78,7 @@
 .service-content {
   display: block;
   background-color: white;
-  padding: 4rem var(--content-padding);
+  padding: 2rem var(--content-padding);
 }
 
 .service-parallax {
