@@ -14,8 +14,15 @@
     p.has-text-align-right {
       text-align: left;
     }
-    .wp-block-buttons {
+
+    .wp-block-buttons,
+    .wp-block-group {
       justify-content: flex-start;
+
+      &.is-content-justification-right {
+        justify-content: flex-end;
+        flex-flow: row-reverse;
+      }
     }
   }
 

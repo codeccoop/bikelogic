@@ -69,7 +69,7 @@
                         <div class="menu-social-menu-container">
                             <ul id="menu-social-menu" class="menu">
                                 <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
-                                    <a href="https://wa.me/<?= get_theme_mod('whatsapp'); ?>"></a>
+                                    <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>"></a>
                                 </li>
                                 <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
                                     <a href="mailto:<?= get_theme_mod('email_address'); ?>"></a>
