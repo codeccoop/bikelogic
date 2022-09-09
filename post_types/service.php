@@ -1,4 +1,3 @@
-
 <?php
 //adding our own portfolio item
 function bl_post_service_item()
