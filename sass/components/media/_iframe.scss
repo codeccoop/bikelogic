@@ -1,7 +1,7 @@
 .wp-block-embed {
   .bl-iframe-size {
     position: relative;
-    padding-bottom: 66.5%;
+    padding-bottom: unquote("min(66.5%, 70vh)");
     width: 100%;
 
     .bl-iframe-responsive {
