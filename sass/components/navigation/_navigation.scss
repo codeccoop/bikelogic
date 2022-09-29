@@ -336,6 +336,10 @@ ul li.pll-parent-menu-item {
     &:hover {
       .sub-menu {
         left: 1.5rem;
+
+        .lang-item:not(:first-child) {
+          margin-top: 0.4rem;
+        }
       }
 
       a:before {
@@ -398,6 +402,11 @@ ul li.pll-parent-menu-item {
     background-color: transparent;
     box-shadow: unset;
     padding: 0px;
+    display: flex;
+
+    @include m-media(md) {
+      display: block;
+    }
 
     .lang-item {
       padding: 0px;
