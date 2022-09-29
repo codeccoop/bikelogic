@@ -230,3 +230,15 @@ function bl_sanitize_image_attachment($input)
     error_log(attachment_url_to_postid($input)); //debug
     return attachment_url_to_postid($input);
 }
+
+/*POLYLANG*/
+/*Allow polylang to include custom strings to the string-translation database*/
+
+add_action('init', function() {
+  pll_register_string('bikelogic-contactans', "Contacta'ns");
+  pll_register_string('bikelogic-onsom', 'On som?');
+  pll_register_string('bikelogic-suport', 'Amb el suport de');
+  pll_register_string('bikelogic-onsom', 'On som?');
+  pll_register_string('bikelogic-onsom', 'Coneix-nos');
+});
+
