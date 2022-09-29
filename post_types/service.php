@@ -21,4 +21,3 @@ function bl_post_service_item()
 }
 
 add_action('init', 'bl_post_service_item');
-?>

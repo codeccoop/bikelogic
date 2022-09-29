@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "viewport.css",
-	"sources": [
-		"../../sass/base/mixins/viewport.scss"
-	],
-	"names": [],
-	"mappings": ""
-}

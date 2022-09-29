@@ -19,13 +19,13 @@
         <div class="site-footer__columns">
             <?php if (is_front_page()) : ?>
                 <div class="site-footer__column left">
-                    <h2 class="contact__section-title">Contacta'ns</h3>
+                    <h2 class="contact__section-title"><?php pll_e("Contacta'ns");?></h3>
                         <?= do_shortcode('[contact-form-7 id="21" title="Contact form 1" html_class="site-footer__contact-form"]'); ?>
                 </div>
             <?php endif; ?>
             <div class="site-footer__column <?= is_front_page() ? 'right' : 'full'; ?>">
                 <?php if (is_front_page()) : ?>
-                    <h2 class="contact__section-title">On som?</h2>
+                    <h2 class="contact__section-title"><?php pll_e("On som?");?></h2>
                 <?php
                 endif;
                 $coordinates = array_map('trim', explode(' ', get_theme_mod('map_coordinates')));
@@ -66,7 +66,7 @@
         </div>
         <div class="site-footer__logos">
             <div class="site-footer__collaborations">
-                <h3>Amb el suport de</h3>
+                <h3><?php pll_e('Amb el suport de');?></h3>
                 <div class="collaborations__logos">
                     <a href="https://www.barcelonactiva.cat/" target="_blank" ><img src="<?= get_template_directory_uri() .'/assets/images/logo-vector-barcelona-activa.png'; ?>" alt="Logo Barcelona Activa"/></a>
                     <a href="https://www.mercantic.com/en/" target="_blank"><img src="<?= get_template_directory_uri() .'/assets/images/mercantic.png';?>" alt="Logo mercantic"/></a>
