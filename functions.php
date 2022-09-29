@@ -164,8 +164,8 @@ function bikelogic_scripts()
     wp_register_script('slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', false);
     // wp_enqueue_script('slick-js');
     wp_register_style('slick-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false);
-      // wp_enqueue_style('slick-css');
-    
+    // wp_enqueue_style('slick-css');
+
 }
 add_action('wp_enqueue_scripts', 'bikelogic_scripts');
 
@@ -234,11 +234,10 @@ function bl_sanitize_image_attachment($input)
 /*POLYLANG*/
 /*Allow polylang to include custom strings to the string-translation database*/
 
-add_action('init', function() {
-  pll_register_string('bikelogic-contactans', "Contacta'ns");
-  pll_register_string('bikelogic-onsom', 'On som?');
-  pll_register_string('bikelogic-suport', 'Amb el suport de');
-  pll_register_string('bikelogic-onsom', 'On som?');
-  pll_register_string('bikelogic-onsom', 'Coneix-nos');
+add_action('init', function () {
+    pll_register_string('bikelogic-contactans', "Contacta'ns");
+    pll_register_string('bikelogic-onsom', 'On som?');
+    pll_register_string('bikelogic-suport', 'Amb el suport de');
+    pll_register_string('bikelogic-onsom', 'On som?');
+    pll_register_string('bikelogic-onsom', 'Coneix-nos');
 });
-
