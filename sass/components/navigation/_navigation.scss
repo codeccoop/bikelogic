@@ -18,8 +18,7 @@
     .admin-bar & {
       top: calc(var(--header-height) + var(--wp-admin--admin-bar--height));
       height: calc(
-        #{vh(100)} - calc(var(--header-height) +
-              var(--wp-admin--admin-bar--height))
+        #{vh(100)} - calc(var(--header-height) + var(--wp-admin--admin-bar--height))
       );
 
       @include m-media(md) {
@@ -88,7 +87,13 @@
 
     &.left {
       flex: 1;
+      display: flex;
+
+      > div {
+        flex: 1;
+      }
     }
+
     &.right {
       a {
         width: 25px;
@@ -166,10 +171,21 @@
     position: relative;
     padding-left: 2rem;
     font-size: 1.1rem;
+    max-width: 50%;
+    margin: auto;
+
+    @include m-media(md) {
+      max-width: unset;
+      margin: auto 0;
+    }
+
+    &.pll-parent-menu-item {
+      margin-left: auto;
+    }
 
     > a:hover,
     > a:focus {
-      color: $color__link;
+      color: $color__bikelogic-green;
     }
   }
 
@@ -203,6 +219,7 @@
   right: calc(var(--content-padding) + 45px);
   top: 50%;
   transform: translate(0, -48%);
+
   a {
     height: 25px;
   }
@@ -241,6 +258,7 @@
     flex: 1 0 50%;
   }
 }
+
 .menu-toggle {
   background-color: transparent;
   border: none;
@@ -295,12 +313,116 @@
   }
 
   .burger::before {
-    content: " ";
+    content: ' ';
     top: 25%;
   }
 
   .burger::after {
-    content: " ";
+    content: ' ';
     bottom: 25%;
+  }
+}
+
+ul li.pll-parent-menu-item {
+  justify-content: center;
+  display: flex;
+  margin-top: 5rem;
+
+  @include m-media(md) {
+    display: block;
+    padding-right: 0.1em;
+    margin-top: 0px;
+
+    &:hover {
+      .sub-menu {
+        left: 1.5rem;
+      }
+
+      a:before {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  > a {
+    font-weight: bold;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    font-weight: bold;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: $color__bikelogic-green;
+    color: white;
+    cursor: default;
+
+    &:hover {
+      .toggled & {
+        color: white;
+        text-indent: 0px;
+      }
+
+      @include m-media(md) {
+        &:before {
+        }
+      }
+    }
+
+    @include m-media(md) {
+      height: auto;
+      width: auto;
+      box-shadow: unset;
+      padding-top: 0.1em;
+      background-color: unset;
+      color: $color__bikelogic-black;
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        position: absolute;
+        left: -1rem;
+        top: calc(50% - 4px);
+        width: 10px;
+        height: 10px;
+        content: ' ';
+        border-left: 2px solid $color__bikelogic-black;
+        border-bottom: 2px solid $color__bikelogic-black;
+        transform: rotate(-45deg);
+        transition: transform 200ms ease;
+      }
+    }
+  }
+
+  .sub-menu {
+    background-color: transparent;
+    box-shadow: unset;
+    padding: 0px;
+
+    .lang-item {
+      padding: 0px;
+
+      .toggled & {
+        margin-left: 0.5rem;
+      }
+
+      > a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 0px 7px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        line-height: 45px;
+        text-align: center;
+        transition: background-color 100ms ease, color 100ms ease;
+
+        &:hover {
+          color: white;
+          background-color: $color__bikelogic-green;
+          text-indent: 0;
+        }
+      }
+    }
   }
 }

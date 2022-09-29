@@ -1,46 +1,46 @@
 /* Navigation
 --------------------------------------------- */
-@import "navigation/navigation";
-@import "navigation/social";
+@import 'navigation/navigation';
+@import 'navigation/social';
 
 /* Posts and pages
 --------------------------------------------- */
-@import "content/posts-and-pages";
+@import 'content/posts-and-pages';
 
 /* Comments
 --------------------------------------------- */
-@import "comments/comments";
+@import 'comments/comments';
 
 /* Widgets
 --------------------------------------------- */
-@import "widgets/widgets";
+@import 'widgets/widgets';
 
 /* Media
 --------------------------------------------- */
-@import "media/media";
+@import 'media/media';
 
 /* Captions
 --------------------------------------------- */
-@import "media/captions";
+@import 'media/captions';
 
 /* Galleries
 --------------------------------------------- */
-@import "media/galleries";
+@import 'media/galleries';
 
 /* Parallax
 --------------------------------------------- */
-@import "media/parallax";
+@import 'media/parallax';
 
 /* Iframe
 -------------------------------------------- */
-@import "media/iframe";
+@import 'media/iframe';
 
 /* Site Components
 --------------------------------------------- */
-@import "site-components/header";
-@import "site-components/footer";
-@import "site-components/loader";
+@import 'site_components/header';
+@import 'site_components/footer';
+@import 'site_components/loader';
 
 /* Shortcodes
 --------------------------------------------- */
-@import "shortcodes/embedded-map";
+@import 'shortcodes/embedded-map';
