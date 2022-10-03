@@ -236,6 +236,7 @@ function bl_sanitize_image_attachment($input)
 
 add_action('init', function () {
     pll_register_string('bikelogic-contactans', "Contacta'ns");
+    pll_register_string('bikelgic-form-contact', 'Formulari de contacte');
     pll_register_string('bikelogic-onsom', 'On som?');
     pll_register_string('bikelogic-suport', 'Amb el suport de');
     pll_register_string('bikelogic-onsom', 'On som?');

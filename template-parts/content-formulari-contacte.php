@@ -13,7 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="contact-header">
         <div class="contact-header__column">
-            <h1>Formulari de contacte</h1>
+            <h1><?= pll__('Formulari de contacte'); ?></h1>
         </div>
     </header><!-- .entry-header -->
 
