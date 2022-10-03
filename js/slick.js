@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  jQuery(".carroussel-content").slick({
+document.addEventListener('DOMContentLoaded', function () {
+  jQuery('.carrousel-content').slick({
     infinite: true,
     speed: 300,
     slidesToShow: 1,

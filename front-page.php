@@ -24,39 +24,29 @@ $page_ID = get_option('page_on_front');
     <section id="cover" class="front-page__section">
         <a class="top-anchor"></a>
         <?php
-        $image_id = get_theme_mod('jumbotron');
-        $image_carroussel1 = get_theme_mod('carroussel1');
-        $image_carroussel2 = get_theme_mod('carroussel2');
-        $carroussel1_data = null;
-        $carroussel2_data = null;
-        $image_data = null;
-        if ($image_id || $image_id && $image_carroussel1 || $image_id && $image_carroussel2 || $image_id && $image_carroussel1 && $image_carroussel2) {?>
-            <div class="carroussel-container">
-                <div class="carroussel-content">
-                    <?php if ($image_id){
-                        $image_data = wp_get_attachment_image_src($image_id, 'full', false);
-                    }
-                    if ($image_data){ ?>
-                        <div><img class="carroussel-image" src="<?php echo $image_data[0]; ?>" alt="Imatge del carroussel"></div>
-                    <?php }
-                    if ($image_carroussel1){
-                    $carroussel1_data = wp_get_attachment_image_src($image_carroussel1, 'full', false);
-                    }
-                    if ($carroussel1_data){ ?>
-                        <div><img class="carroussel-image" src="<?php echo $carroussel1_data[0]; ?>" alt="Imatge del carroussel"></div>
-                    <?php }
-                    if($image_carroussel2){
-                        $carroussel2_data = wp_get_attachment_image_src($image_carroussel2, 'full', false);
-                    }
-                    if($carroussel2_data){ ?>
-                        <div><img class="carroussel-image" src="<?php echo $carroussel2_data[0]; ?>" alt="Imatge del carroussel"></div>
-                    <?php }?>    
+        $lng = pll_current_language();
+        $carrousel_1_id = get_theme_mod('carrousel_1_' . $lng);
+        $carrousel_2_id = get_theme_mod('carrousel_2_' . $lng);
+        $carrousel_3_id = get_theme_mod('carrousel_3_' . $lng);
+        if ($lng !== 'ca' && $carrousel_1_id == null) $carrousel_1_id = get_theme_mod('carrousel_1_ca');
+        if ($lng !== 'ca' && $carrousel_2_id == null) $carrousel_2_id = get_theme_mod('carrousel_2_ca');
+        if ($lng !== 'ca' && $carrousel_3_id == null) $carrousel_3_id = get_theme_mod('carrousel_3_ca');
+        if ($carrousel_1_id != null && ($carrousel_2_id != null || $carrousel_3_id != null)) : ?>
+            <div class="carrousel-container">
+                <div class="carrousel-content">
+                    <?php $carrousel_1_url = wp_get_attachment_image_src($carrousel_1_id, 'full', false); ?>
+                    <div><img class="carrousel-image" src="<?php echo $carrousel_1_url[0]; ?>" alt="Imatge del carrousel"></div>
+                    <?php if ($carrousel_2_id) : $carrousel_2_url = wp_get_attachment_image_src($carrousel_2_id, 'full', false); ?>
+                        <div><img class="carrousel-image" src="<?php echo $carrousel_2_url[0]; ?>" alt="Imatge del carrousel"></div>
+                    <?php endif;
+                    if ($carrousel_3_id) : $carrousel_3_url = wp_get_attachment_image_src($carrousel_3_id, 'full', false); ?>
+                        <div><img class="carrousel-image" src="<?php echo $carrousel_3_url[0]; ?>" alt="Imatge del carrousel"></div>
+                    <?php endif; ?>
                 </div>
             </div>
-        <?php }
-        else { ?>
+        <?php else : ?>
             <img class="front-page__cover-image" src="<?= get_bloginfo('template_url'); ?>/assets/images/home-image.jpg" alt="Portada de la pàgina de bikelogic">
-        <?php }
+        <?php endif;
         $site_description = get_bloginfo('description', 'display');
         $site_name = get_bloginfo('name');
         if (display_header_text() && (is_home() || is_front_page())) : ?>
@@ -66,18 +56,17 @@ $page_ID = get_option('page_on_front');
                 if ($brand_image_id) {
                     $brand_image_url = wp_get_attachment_image_src($brand_image_id, 'full', false)[0];
                 ?>
-                <img src="<?= $brand_image_url; ?>" />
+                    <img src="<?= $brand_image_url; ?>" />
                 <?php } else {
                     //   $brand_image_url = get_bloginfo('template_url') . '/assets/images/bikelogic-brand--white.png'; -->
                     //   <img src="" />
                 }
                 ?>
-                
+
                 <?= $site_description; ?>
             </h1>
         <?php endif; ?>
     </section>
-    <!-- <section id="services" class="front-page__section" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/images/iso_bl_color_pos.png');"> -->
     <a name="services-anchor" class="top-anchored"></a>
     <section id="services" class="front-page__section">
         <a class="top-anchor"></a>
@@ -124,13 +113,13 @@ $page_ID = get_option('page_on_front');
     <a class="top-anchored" name="intersection-anchor"></a>
     <section id="intersection" class="front-page__section">
         <?php $intersection_group = get_field('seccio_intermitja', $page_ID);
-            $intersection_text = $intersection_group['text'];
-            $intersection_logo = $intersection_group['logo']; ?>
+        $intersection_text = $intersection_group['text'];
+        $intersection_logo = $intersection_group['logo']; ?>
         <div class="intersection__container">
             <div class="intersection__text">
                 <?= $intersection_text; ?>
             </div>
-            <img class="intersection__image" src="<?= wp_get_attachment_image_src($intersection_logo, 'medium', false)[0];?>">
+            <img class="intersection__image" src="<?= wp_get_attachment_image_src($intersection_logo, 'medium', false)[0]; ?>">
         </div>
 
     </section>
@@ -169,7 +158,7 @@ $page_ID = get_option('page_on_front');
                     <figcaption><?php echo $objectiu_3['description'] ?></figcaption>
                 </figure>
             </div>
-            <button><a href="<?= get_page_link(get_page_by_title('Som Bikelogic')->ID); ?>"><?php pll_e('Coneix-nos');?></a></button>
+            <button><a href="<?= get_page_link(get_page_by_title('Som Bikelogic')->ID); ?>"><?php pll_e('Coneix-nos'); ?></a></button>
         </div>
     </section>
 </main>
