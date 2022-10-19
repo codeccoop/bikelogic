@@ -20,9 +20,24 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQQKLDRY34"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-HQQKLDRY34');
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -69,7 +84,8 @@
                         <div class="menu-social-menu-container">
                             <ul id="menu-social-menu" class="menu">
                                 <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/whatsapp.png')">
-                                    <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>"></a>
+                                    <a href="https://api.whatsapp.com/send?phone=<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>&text=Hola%20Bikelogic!"></a>
+                                    <!-- <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>?text=Hola%20Bikelogic!"></a> -->
                                 </li>
                                 <li class="menu-item menu-item-type-custom" style="background-image: url('<?= bloginfo('template_url'); ?>/assets/images/icons/email.png')">
                                     <a href="mailto:<?= get_theme_mod('email_address'); ?>"></a>

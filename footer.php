@@ -19,13 +19,13 @@
         <div class="site-footer__columns">
             <?php if (is_front_page()) : ?>
                 <div class="site-footer__column left">
-                    <h2 class="contact__section-title"><?php pll_e("Contacta'ns");?></h3>
+                    <h2 class="contact__section-title"><?php pll_e("Contacta'ns"); ?></h3>
                         <?= do_shortcode('[contact-form-7 id="21" title="Contact form 1" html_class="site-footer__contact-form"]'); ?>
                 </div>
             <?php endif; ?>
             <div class="site-footer__column <?= is_front_page() ? 'right' : 'full'; ?>">
                 <?php if (is_front_page()) : ?>
-                    <h2 class="contact__section-title"><?php pll_e("On som?");?></h2>
+                    <h2 class="contact__section-title"><?php pll_e("On som?"); ?></h2>
                 <?php
                 endif;
                 $coordinates = array_map('trim', explode(' ', get_theme_mod('map_coordinates')));
@@ -38,7 +38,8 @@
                     <p class="contact__street-address" style="white-space: pre;"><?= get_theme_mod('street_address') ?></p>
                     <ul class="contact__links">
                         <li class="contact__link">
-                            <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>"><?= get_theme_mod('whatsapp'); ?></a>
+                            <a href="https://api.whatsapp.com/send?phone=<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>&text=Hola%20Bikelogic!"></a>
+                            <!-- <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>?text=Hola%20Bikelogic!"><?= get_theme_mod('whatsapp'); ?></a> -->
                         </li>
                         <li class="contact__link">
                             <a href="mailto:<?= get_theme_mod('email_address'); ?>"><?= get_theme_mod('email_address'); ?></a>
@@ -66,19 +67,19 @@
         </div>
         <div class="site-footer__logos">
             <div class="site-footer__collaborations">
-                <h3><?php pll_e('Amb el suport de');?></h3>
+                <h3><?php pll_e('Amb el suport de'); ?></h3>
                 <div class="collaborations__logos">
-                    <a href="https://www.barcelonactiva.cat/" target="_blank" ><img src="<?= get_template_directory_uri() .'/assets/images/logo-vector-barcelona-activa.png'; ?>" alt="Logo Barcelona Activa"/></a>
-                    <a href="https://www.mercantic.com/en/" target="_blank"><img src="<?= get_template_directory_uri() .'/assets/images/mercantic.png';?>" alt="Logo mercantic"/></a>
-                    <a href="https://www.codeccoop.org/#home" target="_blank"><img src="<?= get_template_directory_uri() .'/assets/images/logo-codec.webp' ?>" alt="Logo Còdec"/></a>
+                    <a href="https://www.barcelonactiva.cat/" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-vector-barcelona-activa.png'; ?>" alt="Logo Barcelona Activa" /></a>
+                    <a href="https://www.mercantic.com/en/" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/mercantic.png'; ?>" alt="Logo mercantic" /></a>
+                    <a href="https://www.codeccoop.org/#home" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-codec.webp' ?>" alt="Logo Còdec" /></a>
                 </div>
             </div>
             <div class="site-footer__collaborations">
                 <h3>Partners</h3>
                 <div class="collaborations__logos">
-                    <a href="https://www.fleximodal.fr/" target="_blank"><img src="<?= get_template_directory_uri() .'/assets/images/FlexiModal.jpg';?>" alt="Logo mercantic"/></a>
-                    <a href="https://triobike.com/en/" target="_blank" ><img src="<?= get_template_directory_uri() .'/assets/images/triobike.png'; ?>" alt="Logo Barcelona Activa"/></a>
-                    
+                    <a href="https://www.fleximodal.fr/" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/fleximodal-logo.png'; ?>" alt="Logo mercantic" /></a>
+                    <a href="https://triobike.com/en/" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/triobike.png'; ?>" alt="Logo Barcelona Activa" /></a>
+
                 </div>
             </div>
         </div>

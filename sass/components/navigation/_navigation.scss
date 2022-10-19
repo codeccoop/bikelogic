@@ -179,10 +179,6 @@
       margin: auto 0;
     }
 
-    &.pll-parent-menu-item {
-      margin-left: auto;
-    }
-
     > a:hover,
     > a:focus {
       color: $color__bikelogic-green;
@@ -330,12 +326,14 @@ ul li.pll-parent-menu-item {
 
   @include m-media(md) {
     display: block;
-    padding-right: 0.1em;
+    // padding-right: 0.1em;
     margin-top: 0px;
 
     &:hover {
       .sub-menu {
-        left: 1.5rem;
+        display: block;
+        left: 1.6em;
+        // left: 1.7rem;
 
         .lang-item:not(:first-child) {
           margin-top: 0.4rem;
@@ -387,7 +385,7 @@ ul li.pll-parent-menu-item {
 
       &:before {
         position: absolute;
-        left: -1rem;
+        right: -1rem;
         top: calc(50%);
         width: 10px;
         height: 10px;
@@ -404,10 +402,9 @@ ul li.pll-parent-menu-item {
     background-color: transparent;
     box-shadow: unset;
     padding: 0px;
-    display: flex;
 
     @include m-media(md) {
-      display: block;
+      display: none;
     }
 
     .lang-item {
