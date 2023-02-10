@@ -241,4 +241,5 @@ add_action('init', function () {
     pll_register_string('bikelogic-suport', 'Amb el suport de');
     pll_register_string('bikelogic-onsom', 'On som?');
     pll_register_string('bikelogic-onsom', 'Coneix-nos');
+    pll_register_string('bikelogic-onsom', "Promou i finança: la Generalitat de Catalunya - Departament d'Empresa i Treball");
 });

@@ -83,6 +83,14 @@
                 </div>
             </div>
         </div>
+        <div class="site-footer__singulars">
+            <h4><?php pll_e("Promou i finança: la Generalitat de Catalunya - Departament d'Empresa i Treball"); ?></h4>
+            <div class="singulars__logos">
+                <a href="" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-economia-social-transp.png'; ?>" alt="Logo mercantic" /></a>
+                <a href="" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-empresa.png'; ?>" alt="Logo Barcelona Activa" /></a>
+                <a href="" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-ministeri.jpg'; ?>" alt="Logo Barcelona Activa" /></a>
+            </div>
+        </div>
         <div class="site-info">
             <a href="<?php echo esc_url(__('https://wordpress.org/', 'bikelogic')); ?>">
                 <?php
