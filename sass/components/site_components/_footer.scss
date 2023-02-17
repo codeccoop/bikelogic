@@ -197,10 +197,13 @@ textarea.bl-contact-form__textarea {
         width: 200px;
         margin-left: 1rem;
       }
-      a:nth-child(2) img{
+      a:nth-child(2) img, a:first-child img{
         margin-left: 0rem;
       }
       
+    }
+    h4{
+      text-align: center;
     }
 
 }
