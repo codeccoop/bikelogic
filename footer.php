@@ -38,8 +38,7 @@
                     <p class="contact__street-address" style="white-space: pre;"><?= get_theme_mod('street_address') ?></p>
                     <ul class="contact__links">
                         <li class="contact__link">
-                            <a href="https://api.whatsapp.com/send?phone=<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>&text=Hola%20Bikelogic!"><?php get_theme_mod('whatsapp'); ?></a>
-                            <!-- <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>?text=Hola%20Bikelogic!"><?= get_theme_mod('whatsapp'); ?></a> -->
+                            <a href="https://wa.me/<?= bl_format_whatsapp(get_theme_mod('whatsapp')); ?>"><?= get_theme_mod('whatsapp'); ?></a>
                         </li>
                         <li class="contact__link">
                             <a href="mailto:<?= get_theme_mod('email_address'); ?>"><?= get_theme_mod('email_address'); ?></a>
