@@ -8,9 +8,9 @@ function bl_sc_embedded_map($atts = [], $content = null, $tag = '')
             'width' => null,
             'height' => null,
             'marker' => true,
-            'lat' => 41.50281,
-            'lng' => 1.81346,
-            'zoom' => 14.5,
+            'lat' => 41.47861679478992,
+            'lng' => 2.071680583439843,
+            'zoom' => 14.7,
             'class' => null
         ),
         $atts,
@@ -32,7 +32,7 @@ function bl_sc_embedded_map($atts = [], $content = null, $tag = '')
         $classes .= ' ' . $class;
     }
 
-    $content = '<div id="' . $id . '" class="' . $classes . '" style="' . $style . '"></div>';
+    $content = '<div id="map" class="' . $classes . '" style="' . $style . '"></div>';
 
     if (!wp_script_is('mapbox-gl-js')) {
         wp_enqueue_script('mapbox-gl-js');
@@ -44,16 +44,16 @@ function bl_sc_embedded_map($atts = [], $content = null, $tag = '')
 
     $script = '<script>
     document.addEventListener("DOMContentLoaded", function () {
-        mapboxgl.accessToken = "pk.eyJ1Ijoib3J6b2MiLCJhIjoiY2lzZGEzNXhmMDAwdjJvcGZ4NXU2bzU0NCJ9.RzrN_JISe561WfI1SjWCvw";
-        const map = new mapboxgl.Map({
-         container: "' . $id . '", // container ID
-         style: "mapbox://styles/mapbox/streets-v11", // style URL
-         center: [' . $lng . ', ' . $lat . '], // starting position [lng, lat]
-         zoom: ' . $zoom . ', // starting zoom
-        });
-        map.addControl(new mapboxgl.NavigationControl());
-        new mapboxgl.Marker().setLngLat([' . $lng . ', ' . $lat . ']).addTo(map);
+     const map = L.map("map", {
+        center: [' . $lat . ', ' . $lng . '],
+        zoom: ' . $zoom . ',
+        })
+        L.tileLayer(`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`, {
+        attribution: `Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`,
+        }).addTo(map)
+        var marker = L.marker([' . $lat . ', ' . $lng . ']).addTo(map);
     });
+        
     </script>';
 
     return $content . $script;
