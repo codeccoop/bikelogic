@@ -69,7 +69,6 @@
             <div class="site-footer__collaborations">
                 <h3><?php pll_e('Amb el suport de'); ?></h3>
                 <div class="collaborations__logos">
-                    <a href="https://www.barcelonactiva.cat/" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-vector-barcelona-activa.png'; ?>" alt="Logo Barcelona Activa" /></a>
                     <a href="https://www.mercantic.com/en/" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/mercantic.png'; ?>" alt="Logo mercantic" /></a>
                     <a href="https://www.codeccoop.org/#home" target="_blank"><img src="<?= get_template_directory_uri() . '/assets/images/logo-codec.webp' ?>" alt="Logo Còdec" /></a>
                 </div>
